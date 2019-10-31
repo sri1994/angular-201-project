@@ -1,0 +1,161 @@
+<!-- <p>seat-map works!</p> -->
+<br>
+<div style="text-align: center;">
+    <button style="margin-right: 8px" mat-raised-button color="accent" (click)="isShowSeatLayout = !isShowSeatLayout">{{ isShowSeatLayout? 'Hide seat layout' : 'Show seat layout' }}</button>
+    <button style="margin-right: 8px" mat-raised-button color="accent" (click)="isShowFlightDetail = !isShowFlightDetail">{{ isShowFlightDetail? 'Hide flight details' : 'Show flight details' }}</button>
+</div>
+
+<br>
+
+<div class="row no-margin" *ngIf="isShowFlightDetail">
+    <div class="col-lg-12">
+        <span>Flight details</span>
+    </div>
+</div>
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="row no-margin" *ngIf="seatConfig?.length > 0 && isShowSeatLayout">
+    <div class="col-lg-6" style="text-align: center;">
+        <div>
+            <span class="mat-body-2">
+                Seat layout
+            </span>
+        </div>
+        <div class="row" style="border: 2px solid rebeccapurple;background-color: ghostwhite;">
+            <div class="col-lg-2">
+
+            </div>
+            <div class="col-lg-8">
+                <br>
+                <div *ngFor="let seatrow of seatmap">
+
+                    <div class="seatrow">
+
+                        <div *ngFor="let seatobj of seatrow?.seats">
+                            <div class="seat-space" style="color:white ; background-color: white;"
+                                *ngIf="seatobj.seatLabel == ''"> &nbsp;&nbsp;&nbsp; </div>
+                
+                            <div [ngClass]="{ 'seat-item' : true ,
+                                                 'seat-available': seatobj.status === 'available',
+                                                 'seat-with-infant': !seatobj.passengerStatus && !seatobj.isPassengerWithWheelChair && seatobj.isPassengerWithInfant,
+                                                 'seat-with-wheel-chair': !seatobj.passengerStatus && seatobj.isPassengerWithWheelChair && !seatobj.isPassengerWithInfant,
+                                                 'seat-with-wheel-chair-and-infant': !seatobj.passengerStatus && seatobj.isPassengerWithWheelChair && seatobj.isPassengerWithInfant,
+                                                 'seat-with-infant-checkedIn': seatobj.passengerStatus && !seatobj.isPassengerWithWheelChair && seatobj.isPassengerWithInfant,
+                                                 'seat-with-wheel-chair-checkedIn': seatobj.passengerStatus && seatobj.isPassengerWithWheelChair && !seatobj.isPassengerWithInfant,
+                                                 'seat-with-wheel-chair-and-infant-checkedIn': seatobj.passengerStatus && seatobj.isPassengerWithWheelChair && seatobj.isPassengerWithInfant,
+                                                 'seat-checkedIn' : seatobj.passengerStatus }"
+                                (click)="selectSeat(seatobj)"
+                                *ngIf="(seatobj.status == 'available' || seatobj.status == 'booked' )&& seatobj.seatLabel != ''">
+                                {{seatobj.seatNo}}</div>
+                            
+                            <div [ngClass]="{ 'seat-item' : true , 'seat-unavailable' : true, 'seat-checkedIn' : seatobj.passengerStatus === true }"
+                                *ngIf="seatobj.status == 'unavailable' && seatobj.seatLabel != ''">{{seatobj.seatNo}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row mat-body-1">
+            <div class="col-lg-7 text-right">
+              <span>For normal passenger: </span>
+            </div>
+            <div class="col-lg-5">
+                <div style="display: flex; justify-content: center;">
+                    <div class="seat-item seat-checkedIn">
+                    </div>
+                    <div class=""><span> checked in</span></div>
+                    <div class="seat-item seat-available">
+                    </div>
+                    <div class=""><span> Not checked in</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mat-body-1">
+            <div class="col-lg-7 text-right">
+              <span>For passenger with infant: </span>
+            </div>
+            <div class="col-lg-5">
+                <div style="display: flex; justify-content: center;">
+                    <div class="seat-item seat-with-infant-checkedIn">
+                    </div>
+                    <div class=""><span> checked in</span></div>
+                    <div class="seat-item seat-with-infant">
+                    </div>
+                    <div class=""><span> Not checked in</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mat-body-1">
+            <div class="col-lg-7 text-right">
+              <span>For passenger requiring wheel chair: </span>
+            </div>
+            <div class="col-lg-5">
+                <div style="display: flex; justify-content: center;">
+                    <div class="seat-item seat-with-wheel-chair-checkedIn">
+                    </div>
+                    <div class=""><span> checked in</span></div>
+                    <div class="seat-item seat-with-wheel-chair">
+                    </div>
+                    <div class=""><span> Not checked in</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="row mat-body-1">
+            <div class="col-lg-7 text-right">
+              <span>For passenger with infant and requiring wheel chair: </span>
+            </div>
+            <div class="col-lg-5">
+                <div style="display: flex; justify-content: center;">
+                    <div class="seat-item seat-with-wheel-chair-and-infant-checkedIn">
+                    </div>
+                    <div class=""><span> checked in</span></div>
+                    <div class="seat-item seat-with-wheel-chair-and-infant">
+                    </div>
+                    <div class=""><span> Not checked in</span></div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="selected-seats" *ngIf="cart?.selectedSeats?.length > 0">
+            <h5 class="col-lg-12 no-padding">Selected Seats : </h5>
+            <span *ngFor="let seatLabel of cart.selectedSeats" class="badge badge-primary">{{seatLabel}}</span>
+        </div>
+
+    </div>
+    <div class="col-lg-6" *ngIf="selectedPassengers?.length > 0">
+        <div style="text-align: center;">
+            <span class="mat-body-2">Checked in passengers details</span>
+        </div>
+        <div style="height: 16rem; overflow-y: scroll;">
+            <div *ngFor="let seatObject of selectedPassengers.reverse()">
+                <mat-card *ngIf="seatObject.passengerStatus" style="border: 2px solid rebeccapurple; background-color: ghostwhite;">
+                    <mat-card-content>
+                        <div>
+                            <span class="mat-body">Name: {{ seatObject?.passengerDetails?.name }}</span>
+                        </div>
+                        <div><span class="mat-body">ID: {{ seatObject?.passengerDetails?.name }}</span></div>
+                    </mat-card-content>
+                </mat-card>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row no-margin" *ngIf="seatConfig?.length > 0 && isShowSeatLayout">
+    <div class="col-lg-12" style="text-align: center;">
+        <br>
+        <button mat-raised-button (click)="formatPayload()" color="primary">Check in selected passengers</button>
+    </div>
+</div>
+<!-- <div *ngIf="seatConfig?.length > 0"> -->
+<!-- <div *ngFor="let seat of flightDetails$ | async;">
+    {{ seat | json }}
+</div> -->
+<!-- </div> -->
+<!-- <span>{{ flightDetails$ | async | json }}</span> -->

@@ -1,0 +1,250 @@
+{
+  "credentials": [
+    {
+      "id": "admin",
+      "isAuthenticated": true,
+      "userType": "admin",
+      "user": {
+        "email": "srinivas@gmail.com",
+        "password": "mind123",
+        "id": "srinivas123"
+      }
+    },
+    {
+      "id": "staff",
+      "isAuthenticated": true,
+      "userType": "staff",
+      "user": {
+        "email": "prasad@gmail.com",
+        "password": "mind123",
+        "id": "srinivas123"
+      }
+    }
+  ],
+  "flights": [
+    {
+      "id": "f1",
+      "name": "Airbus 420 London",
+      "details": {
+        "origin": "Bengaluru",
+        "destination": "London",
+        "timeOfDeparture": "20:55 IST",
+        "jpurneyHours": "5000",
+        "noOfPassengers": 250
+      },
+      "seatConfig": [
+        {
+          "seat_price": 250,
+          "seats": [
+            {
+              "serialNo": "01",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": true,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas",
+                "id": "ertdf3"
+              }
+            },
+            {
+              "serialNo": "02",
+              "status": {
+                "checkedIn": false,
+                "wheelChair": false,
+                "withInfant": true
+              },
+              "passengerDetails": {
+                "name": "srinivas1",
+                "id": "ertdf3"
+              }
+            },
+            {
+              "serialNo": "03",
+              "status": {
+                "checkedIn": false,
+                "wheelChair": true,
+                "withInfant": true
+              },
+              "passengerDetails": {
+                "name": "srinivas2",
+                "id": "ertdf3"
+              }
+            },
+            {
+              "serialNo": "04",
+              "status": {
+                "checkedIn": false,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas3",
+                "id": "ertdf3"
+              }
+            },
+            {
+              "serialNo": "05",
+              "status": {
+                "checkedIn": false,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas4",
+                "id": "ertdf3"
+              }
+            },
+            {
+              "serialNo": "06",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas5",
+                "id": "ertdf3"
+              }
+            }
+          ],
+          "seat_map": [
+            {
+              "seat_label": "1",
+              "layout": "ggg__ggg"
+            },
+            {
+              "seat_label": "2",
+              "layout": "ggg__ggg"
+            },
+            {
+              "seat_label": "3",
+              "layout": "ggg__ggg"
+            },
+            {
+              "seat_label": "4",
+              "layout": "ggg__ggg"
+            },
+            {
+              "seat_label": "5",
+              "layout": "ggg__ggg"
+            },
+            {
+              "seat_label": "6",
+              "layout": "ggg__ggg"
+            },
+            {
+              "seat_label": "7",
+              "layout": "ggg__ggg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f2",
+      "name": "Jatayu 640 Bangkok",
+      "details": {
+        "origin": "Bengaluru",
+        "destination": "Bangkok",
+        "timeOfDeparture": "20:55 IST",
+        "jpurneyHours": "5000",
+        "noOfPassengers": 250
+      },
+      "seatConfig": [
+        {
+          "seat_price": 250,
+          "seats": [
+            {
+              "serialNo": "01",
+              "status": {
+                "checkedIn": false,
+                "wheelChair": true,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "Saptarishi",
+                "id": "ertdf3"
+              }
+            },
+            {
+              "serialNo": "02",
+              "status": {
+                "checkedIn": false,
+                "wheelChair": false,
+                "withInfant": true
+              },
+              "passengerDetails": {
+                "name": "Jamaical",
+                "id": "ertdf3"
+              }
+            },
+            {
+              "serialNo": "03",
+              "status": {
+                "checkedIn": false,
+                "wheelChair": true,
+                "withInfant": true
+              },
+              "passengerDetails": {
+                "name": "Buongine",
+                "id": "ertdf3"
+              }
+            },
+            {
+              "serialNo": "04",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "Lunai Juda",
+                "id": "ertdf3"
+              }
+            },
+            {
+              "serialNo": "05",
+              "status": {
+                "checkedIn": false,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "Naane hero",
+                "id": "ertdf3"
+              }
+            },
+            {
+              "serialNo": "06",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "Apoora jan",
+                "id": "ertdf3"
+              }
+            }
+          ],
+          "seat_map": [
+            {
+              "seat_label": "1",
+              "layout": "ggg__ggg"
+            },
+            {
+              "seat_label": "2",
+              "layout": "ggg__ggg"
+            },
+            {
+              "seat_label": "3",
+              "layout": "ggg__ggg"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

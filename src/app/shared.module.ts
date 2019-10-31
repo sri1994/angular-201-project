@@ -1,19 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CommonToolbarComponent } from './common-toolbar/common-toolbar.component';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }    from '@angular/forms';
-import { StoreModule } from '@ngrx/store';
-import { authReducer } from './store/reducers/auth.reducers';
-import { EffectsModule } from '@ngrx/effects';
-import { AuthEffects } from './store/effects/auth.effects';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { CommonModule } from '@angular/common';
-
 
 import {A11yModule} from '@angular/cdk/a11y';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -56,38 +46,18 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
-import { AirlineToolbarComponent } from './airline-toolbar/airline-toolbar.component';
 
-import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
-import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
-import { FlightEffects } from './store/effects/flights.effects';
-import { flightReducer, flightsReducer } from './store/reducers/flights.reducers';
 
-let config = new AuthServiceConfig([
-  {
-    id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider("Google-OAuth-Client-Id")
-  },
-  {
-    id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider("Facebook-App-Id")
-  }
-]);
-
-export function provideConfig() {
-  return config;
-}
+import { StoreModule } from '@ngrx/store';
+import { authReducer } from './store/reducers/auth.reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './store/effects/auth.effects';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    AirlineToolbarComponent
-  ],
+  declarations: [CommonToolbarComponent],
   imports: [
-    BrowserModule,
     CommonModule,
-    AppRoutingModule,
     HttpClientModule,
     FormsModule,
     A11yModule,
@@ -131,20 +101,54 @@ export function provideConfig() {
     MatTooltipModule,
     MatTreeModule,
     PortalModule,
-    ScrollingModule,
-    StoreModule.forRoot({
-      authState: authReducer,
-      flightState: flightReducer,
-      flightsState: flightsReducer
-    }),
-    EffectsModule.forRoot([AuthEffects, FlightEffects]),
-    BrowserAnimationsModule,
-    SocialLoginModule
+    ScrollingModule
   ],
-  providers: [{
-    provide: AuthServiceConfig,
-    useFactory: provideConfig
-  }],
-  bootstrap: [AppComponent]
+  exports: [
+    CommonToolbarComponent, CommonModule,
+    HttpClientModule,
+    FormsModule,
+    A11yModule,
+    CdkStepperModule,
+    CdkTableModule,
+    CdkTreeModule,
+    DragDropModule,
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+    PortalModule,
+    ScrollingModule
+  ]
 })
-export class AppModule { }
+export class SharedModule { }

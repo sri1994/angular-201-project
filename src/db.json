@@ -1,0 +1,138 @@
+{
+    "credentials": [
+        {
+            "id": "admin",
+            "isAuthenticated": false,
+            "userType": "admin",
+            "user": {
+                "email": "srinivas@gmail.com",
+                "password": "mind123",
+                "id": "srinivas123"
+            }
+        },
+        {   
+            "id": "staff",
+            "isAuthenticated": false,
+            "userType": "staff",
+            "user": {
+                "email": "prasad@gmail.com",
+                "password": "mind123",
+                "id": "srinivas123"
+            }
+        }
+    ],
+    "flights": [
+        {
+            "id": "f1",
+            "name": "Airbus 420 London",
+            "details": {
+                "origin": "Bengaluru",
+                "destination": "London",
+                "timeOfDeparture": "20:55 IST",
+                "jpurneyHours": "5000",
+                "noOfPassengers": 250
+            },
+            "seats": [
+                {
+                    "serialNo": 1,
+                    "status": {
+                      "checkedIn": false,
+                      "additionalBene": {
+                          "withInfant": false,
+                          "requireWheelChair": false
+                      }
+                    },
+                    "passenger": {
+                        "name": "Srinivas Prasad",
+                        "id": "B468",
+                        "age": "25",
+                        "ancillaryServices": [
+                            "hotel booking", 
+                            "travel insurance", 
+                            "amusement tickets", 
+                            "foreign exchange", 
+                            "airport parking", 
+                            "international sim card"
+                        ]
+                    }
+                },
+                {
+                    "serialNo": 2,
+                    "status": {
+                      "checkedIn": false,
+                      "additionalBene": {
+                          "withInfant": false,
+                          "requireWheelChair": false
+                      }
+                    },
+                    "passenger": {
+                        "name": "Deepa",
+                        "id": "B430",
+                        "age": "24",
+                        "ancillaryServices": [
+                            "hotel booking", 
+                            "travel insurance", 
+                            "amusement tickets", 
+                            "foreign exchange", 
+                            "airport parking", 
+                            "international sim card"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "f2",
+            "name": "Airbus 500 Colombo",
+            "details": {
+                "origin": "Bengaluru",
+                "destination": "Colombo",
+                "timeOfDeparture": "20:55 IST",
+                "jpurneyHours": "5000",
+                "noOfPassengers": 250
+            },
+            "seats": [
+                {
+                    "serialNo": 1,
+                    "status": {
+                      "checkedIn": false,
+                      "additionalBene": {
+                          "withInfant": false,
+                          "requireWheelChair": false
+                      }
+                    },
+                    "passenger": {
+                        "name": "Anuroop",
+                        "id": "B469",
+                        "age": "26",
+                        "ancillaryServices": [
+                            "hotel booking", 
+                            "travel insurance", 
+                            "amusement tickets"
+                        ]
+                    }
+                },
+                {
+                    "serialNo": 2,
+                    "status": {
+                      "checkedIn": false,
+                      "additionalBene": {
+                          "withInfant": false,
+                          "requireWheelChair": false
+                      }
+                    },
+                    "passenger": {
+                        "name": "Anu",
+                        "id": "B470",
+                        "age": "26",
+                        "ancillaryServices": [
+                            "hotel booking", 
+                            "travel insurance", 
+                            "amusement tickets"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

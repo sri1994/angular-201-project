@@ -1,0 +1,57 @@
+<!-- <p>checkin works!</p>
+
+<div *ngIf="flightsList">
+    <div *ngFor="let flight of flightsList | async">
+        {{ flight | json }}
+    </div>
+</div>
+<br>
+<div>
+    <span>{{ flightDetails | json }}</span>
+</div> -->
+<br>
+<div class="row no-margin">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10" style="border: 2px solid rebeccapurple;
+border-radius: 0.5rem;
+background-color: ghostwhite;">
+        <br>
+
+        <div class="airline-check-in-buttons">
+            <button mat-raised-button color="primary" (click)="showFlights('showPassenger')">Show Passengers</button>
+            <button mat-raised-button (click)="showFlights('checkInPassenger')" color="primary">Check in
+                passenger</button>
+        </div>
+
+        <br>
+
+        <div class="airline-check-in-buttons" *ngIf="isShowFlights">
+            <mat-form-field>
+                <mat-select [(value)]="selectedFlight" placeholder="Select flight"
+                    (selectionChange)="onFlightSelectionChanged($event)">
+                    <mat-option *ngFor="let flight of updatedFlightsList" [value]="flight">{{ flight?.name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <br>
+
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+
+<div *ngIf="selectedFlight && isCheckInPassenger">
+    <app-seat-map [fid]="selectedFlight?.id" (checkedInPayload)="updateCheckedInPayload($event)">
+    </app-seat-map>
+</div>
+
+<!-- <mat-spinner *ngIf="flightDetails && selectedFlight && isCheckInPassenger"></mat-spinner> -->
+
+<br>
+
+<div *ngIf="selectedFlight && isShowPassengers">
+    <app-passengers-list [flightId]="selectedFlight?.id"></app-passengers-list>
+</div>
+
+<br>

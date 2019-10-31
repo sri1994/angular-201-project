@@ -1,0 +1,99 @@
+<!-- <div class="row"> -->
+<!-- <div class="col-md-4">
+    <h1>Log in</h1>
+    <hr><br>
+    <form (ngSubmit)="onSubmit()" ngNativeValidate>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input [(ngModel)]="user.email" name="email" type="email" required class="form-control" id="email"
+          placeholder="enter your email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input [(ngModel)]="user.password" name="password" type="password" required class="form-control" id="password"
+          placeholder="enter a password">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <span>&nbsp;</span>
+      <span>&nbsp;</span>
+      <span>&nbsp;</span>
+      <a [routerLink]="['/']" class="btn btn-success">Cancel</a>
+    </form>
+  </div> -->
+<!-- <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <h1>Log in</h1>
+    <hr><br>
+    <form (ngSubmit)="onSubmit()" ngNativeValidate>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" type="text">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" type="password">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-select placeholder="Select role">
+          <mat-option value="staff">Staff</mat-option>
+          <mat-option value="admin">Admin</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="col-md-3"></div> -->
+<!-- </div> -->
+<div class="centered">
+<div class="row no-margin">
+  <div class="col-lg-3">
+
+  </div>
+  <div class="col-lg-6">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="example-form">
+          <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Email" [(ngModel)]="userEmail" name="email" required>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Password" [(ngModel)]="userPassword" type="password" name="password"
+                    required>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                  <mat-select class="example-full-width" [(value)]="selected" placeholder="Select role">
+                      <mat-option value="staff">Staff</mat-option>
+                      <mat-option value="admin">Admin</mat-option>
+                    </mat-select>
+                </td>
+              </tr>
+          </table>
+        </form>
+        <mat-label color="warn" *ngIf="credentialError">Email or password entered is wrong!!. Please enter again.</mat-label>
+        <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button (click)="onSubmit()" color="primary">Login</button>
+        <button mat-raised-button color="accent">Cancel</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="col-lg-3">
+
+  </div>
+</div>
+</div>
