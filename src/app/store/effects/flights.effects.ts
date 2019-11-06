@@ -29,10 +29,10 @@ export class FlightEffects {
 
     @Effect() updateFlightsList$ = this.actions$.pipe(ofType<FlightActions.UpdateFlightsListAction>(FlightActions.UPDATE_FLIGHTS_LIST),
         mergeMap(
-            (data) => this.flightsService.updateFlightsList(data.payload)
+            (dataPayload) => this.flightsService.updateFlightsList(dataPayload.payload)
                 .pipe(
-                    map(data => new FlightActions.UpdateFlightsListSuccessAction(data)),
-                    catchError(error => of(new FlightActions.UpdateFlightsListFailureAction(error)))
+                    map(data => new FlightActions.UpdateFlightsListSuccessAction(data, dataPayload.payloadType)),
+                    catchError(error => of(new FlightActions.UpdateFlightsListFailureAction(error, dataPayload.payloadType)))
                 )
         )
     );

@@ -25,6 +25,7 @@ export class FlightsService {
   }
 
   public updateFlightsList(updatedFlightObject: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${updatedFlightObject.flightId}`, updatedFlightObject.flightData);
+    return this.http.put(`${this.baseUrl}/${updatedFlightObject.flightId}`, updatedFlightObject.flightData).pipe(delay(500));
+    // return this.http.put(`${this.baseUrl}/f4`, updatedFlightObject.flightData);
   }
 }

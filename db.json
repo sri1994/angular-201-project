@@ -2,7 +2,7 @@
   "credentials": [
     {
       "id": "admin",
-      "isAuthenticated": true,
+      "isAuthenticated": false,
       "userType": "admin",
       "user": {
         "email": "srinivas@gmail.com",
@@ -45,31 +45,64 @@
               },
               "passengerDetails": {
                 "name": "srinivas",
-                "id": "ertdf3"
+                "id": "ertdf3",
+                "specialMeals": true,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  }
+                ]
               }
             },
             {
               "serialNo": "02",
               "status": {
-                "checkedIn": false,
+                "checkedIn": true,
                 "wheelChair": false,
                 "withInfant": true
               },
               "passengerDetails": {
                 "name": "srinivas1",
-                "id": "ertdf3"
+                "id": "ertdf3",
+                "specialMeals": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": true
+                  }
+                ]
               }
             },
             {
               "serialNo": "03",
               "status": {
-                "checkedIn": false,
+                "checkedIn": true,
                 "wheelChair": true,
                 "withInfant": true
               },
               "passengerDetails": {
                 "name": "srinivas2",
-                "id": "ertdf3"
+                "id": "ertdf3",
+                "specialMeals": true,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": false
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  }
+                ]
               }
             },
             {
@@ -81,7 +114,18 @@
               },
               "passengerDetails": {
                 "name": "srinivas3",
-                "id": "ertdf3"
+                "id": "ertdf3",
+                "specialMeals": true,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  }
+                ]
               }
             },
             {
@@ -93,19 +137,41 @@
               },
               "passengerDetails": {
                 "name": "srinivas4",
-                "id": "ertdf3"
+                "id": "ertdf3",
+                "specialMeals": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  }
+                ]
               }
             },
             {
               "serialNo": "06",
               "status": {
-                "checkedIn": true,
+                "checkedIn": false,
                 "wheelChair": false,
                 "withInfant": false
               },
               "passengerDetails": {
                 "name": "srinivas5",
-                "id": "ertdf3"
+                "id": "ertdf3",
+                "specialMeals": true,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  }
+                ]
               }
             }
           ],
@@ -165,7 +231,8 @@
               },
               "passengerDetails": {
                 "name": "Saptarishi",
-                "id": "ertdf3"
+                "id": "ertdf3",
+                "specialMeals": false
               }
             },
             {
@@ -177,7 +244,8 @@
               },
               "passengerDetails": {
                 "name": "Jamaical",
-                "id": "ertdf3"
+                "id": "ertdf3",
+                "specialMeals": true
               }
             },
             {
@@ -189,19 +257,21 @@
               },
               "passengerDetails": {
                 "name": "Buongine",
-                "id": "ertdf3"
+                "id": "ertdf3",
+                "specialMeals": true
               }
             },
             {
               "serialNo": "04",
               "status": {
-                "checkedIn": true,
+                "checkedIn": false,
                 "wheelChair": false,
                 "withInfant": false
               },
               "passengerDetails": {
                 "name": "Lunai Juda",
-                "id": "ertdf3"
+                "id": "ertdf3",
+                "specialMeals": false
               }
             },
             {
@@ -213,7 +283,8 @@
               },
               "passengerDetails": {
                 "name": "Naane hero",
-                "id": "ertdf3"
+                "id": "ertdf3",
+                "specialMeals": false
               }
             },
             {
@@ -225,7 +296,8 @@
               },
               "passengerDetails": {
                 "name": "Apoora jan",
-                "id": "ertdf3"
+                "id": "ertdf3",
+                "specialMeals": true
               }
             }
           ],

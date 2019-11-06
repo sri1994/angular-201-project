@@ -42,7 +42,7 @@ export class GetFlightDetailsAction implements Action {
 export class GetFlightDetailsSuccessAction implements Action {
     public readonly type = GET_FLIGHT_DETAILS_SUCCESS;
 
-    constructor(public payload: string) {
+    constructor(public payload: any) {
 
     }
 }
@@ -58,7 +58,7 @@ export class GetFlightDetailsFailureAction implements Action {
 export class UpdateFlightsListAction implements Action {
     public readonly type = UPDATE_FLIGHTS_LIST;
 
-    constructor(public payload: any) {
+    constructor(public payload: any, public payloadType: any) {
 
     }
 }
@@ -66,7 +66,7 @@ export class UpdateFlightsListAction implements Action {
 export class UpdateFlightsListSuccessAction implements Action {
     public readonly type = UPDATE_FLIGHTS_LIST_SUCCESS;
 
-    constructor(public payload: any) {
+    constructor(public payload: any, public payloadType: any) {
 
     }
 }
@@ -74,7 +74,7 @@ export class UpdateFlightsListSuccessAction implements Action {
 export class UpdateFlightsListFailureAction implements Action {
     public readonly type = UPDATE_FLIGHTS_LIST_FAILURE;
 
-    constructor(public payload: Error) {
+    constructor(public payload: Error, public payloadType: any) {
 
     }
 }

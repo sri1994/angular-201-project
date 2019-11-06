@@ -1,1 +1,44 @@
-<p>in-flight works!</p>
+<br>
+<div class="row no-margin">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10" style="border: 2px solid rebeccapurple;
+border-radius: 0.5rem;
+background-color: ghostwhite;">
+        <br>
+
+        <div class="airline-check-in-buttons">
+            <button mat-raised-button color="primary" (click)="showFlights('specialMeal')">Add/Remove special
+                meal</button>
+            <button mat-raised-button (click)="showFlights('ancillaryServices')" color="primary">Add/Remove ancillary
+                services</button>
+        </div>
+
+        <br>
+
+        <div class="airline-check-in-buttons" *ngIf="isShowFlights">
+            <mat-form-field>
+                <mat-select [(value)]="selectedFlight" placeholder="Select flight"
+                    (selectionChange)="onFlightSelectionChanged($event)">
+                    <mat-option *ngFor="let flight of updatedFlightsList" [value]="flight">{{ flight?.name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <br>
+
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+
+<br>
+
+<div *ngIf="selectedFlight && isSpecialMeal">
+    <app-modify-special-meal [fid]="selectedFlight?.id" (checkedInPayload)="updateCheckedInPayload($event, 'special-meal')">
+    </app-modify-special-meal>
+</div>
+
+<div *ngIf="selectedFlight && isAncillaryServices">
+    <app-modify-ancillary-services [fid]="selectedFlight?.id" (ancillaryChangePayload)="updateCheckedInPayload($event, 'ancillary-services')">
+    </app-modify-ancillary-services>
+</div>

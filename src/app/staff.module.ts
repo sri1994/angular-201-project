@@ -9,6 +9,8 @@ import { CheckinComponent } from './checkin/checkin.component';
 import { SeatMapComponent } from './seat-map/seat-map.component';
 import { ActionModalComponent } from './action-modal/action-modal.component';
 import { PassengersListComponent } from './passengers-list/passengers-list.component';
+import { ModifySpecialMealComponent } from './modify-special-meal/modify-special-meal.component';
+import { ModifyAncillaryServicesComponent } from './modify-ancillary-services/modify-ancillary-services.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '/check-in', pathMatch: 'full' },
@@ -23,7 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [PassengerBoardingComponent, InFlightComponent, CheckinComponent, SeatMapComponent, ActionModalComponent, PassengersListComponent],
+  declarations: [PassengerBoardingComponent, InFlightComponent, CheckinComponent, SeatMapComponent, ActionModalComponent, PassengersListComponent, ModifySpecialMealComponent, ModifyAncillaryServicesComponent],
   imports: [
     SharedModule,
     RouterModule.forChild(routes)

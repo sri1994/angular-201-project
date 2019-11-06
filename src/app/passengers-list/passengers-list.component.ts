@@ -29,81 +29,84 @@ export class PassengersListComponent implements OnInit {
 
   public displayedColumns = ['Name', 'Seat', 'AncillaryServices'];
   public dataSource: MatTableDataSource<PassengerData>;
-  public passengers: PassengerData[];
+  public passengers: PassengerData[] = [];
 
   public passengerStatusList: any[];
   public selectedStatus: any;
   public flightDetails$: Observable<flights.flightState>;
 
-  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
-  @ViewChild(MatSort, {static: false}) sort: MatSort;
+  flightDetail: any = '';
+
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: false }) sort: MatSort;
 
   public constructor(private store: Store<AppState>) {
 
     this.selectedStatus = '';
 
-    this.passengerStatusList = [ 'Checked in', 'Not checked in', 'With infant', 'Require wheel chair'];
+    this.passengerStatusList = ['Checked in', 'Not checked in', 'With infant', 'Require wheel chair'];
 
-    this.passengers = [
-      {
-        name: 'Srinivas Prasad',
-        seatNo: '31',
-        status: {
-          checkedIn: true,
-          withInfant: true,
-          wheelChair: false
-        },
-        ancillaryServices: [
-          'airportParking',
-          'currencyExchange'
-        ]
-      },
-      {
-        name: 'Srinivas Prasad H R',
-        seatNo: '32',
-        status: {
-          checkedIn: true,
-          withInfant: true,
-          wheelChair: false
-        },
-        ancillaryServices: [
-          'airportParking',
-          'currencyExchange'
-        ]
-      },
-      {
-        name: 'Subramanya Prasad H R',
-        seatNo: '32',
-        status: {
-          checkedIn: true,
-          withInfant: false,
-          wheelChair: false
-        },
-        ancillaryServices: [
-          'airportParking',
-          'currencyExchange'
-        ]
-      },
-      {
-        name: 'Stephen Hawking',
-        seatNo: '34',
-        status: {
-          checkedIn: true,
-          withInfant: false,
-          wheelChair: true
-        },
-        ancillaryServices: [
-          'airportParking',
-          'currencyExchange',
-          'hotelBooking'
-        ]
-      }
-    ];
+    // this.passengers = [
+    //   {
+    //     name: 'Srinivas Prasad',
+    //     seatNo: '31',
+    //     status: {
+    //       checkedIn: true,
+    //       withInfant: true,
+    //       wheelChair: false
+    //     },
+    //     ancillaryServices: [
+    //       'airportParking',
+    //       'currencyExchange'
+    //     ]
+    //   },
+    //   {
+    //     name: 'Srinivas Prasad H R',
+    //     seatNo: '32',
+    //     status: {
+    //       checkedIn: true,
+    //       withInfant: true,
+    //       wheelChair: false
+    //     },
+    //     ancillaryServices: [
+    //       'airportParking',
+    //       'currencyExchange'
+    //     ]
+    //   },
+    //   {
+    //     name: 'Subramanya Prasad H R',
+    //     seatNo: '32',
+    //     status: {
+    //       checkedIn: true,
+    //       withInfant: false,
+    //       wheelChair: false
+    //     },
+    //     ancillaryServices: [
+    //       'airportParking',
+    //       'currencyExchange'
+    //     ]
+    //   },
+    //   {
+    //     name: 'Stephen Hawking',
+    //     seatNo: '34',
+    //     status: {
+    //       checkedIn: true,
+    //       withInfant: false,
+    //       wheelChair: true
+    //     },
+    //     ancillaryServices: [
+    //       'airportParking',
+    //       'currencyExchange',
+    //       'hotelBooking'
+    //     ]
+    //   }
+    // ];
 
   }
 
   public ngOnInit() {
 
+    //this.flightDetails$ = this.store.select(store => store.flightState.flightData);
     this.flightDetails$ = this.store.select(store => store.flightState.flightData);
     this.store.dispatch(new FlightActions.GetFlightDetailsAction(this.flightId));
 
@@ -111,26 +114,42 @@ export class PassengersListComponent implements OnInit {
     //   this.passengers = this.passengerList;
     // }
     this.flightDetails$.subscribe((flightDetail: any) => {
-      console.log('FLIGHT DETAILS :', flightDetail);
-    })
-    this.dataSource = new MatTableDataSource(this.passengers);
-  }
+      console.log('FLIGHT DETAILS $$$ :', flightDetail);
+      this.flightDetail = flightDetail;
 
-  public ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+      this.passengers = [];
+
+      if (this.flightDetail && this.flightDetail['seatConfig']) {
+
+        this.flightDetail.seatConfig[0].seats.forEach(seat => {
+
+          let passenger: any = {};
+          passenger['seatNo'] = seat.serialNo;
+          passenger['name'] = seat.passengerDetails.name;
+          passenger['status'] = seat.status;
+          passenger['ancillaryServices'] = ['airportParking',
+            'currencyExchange'];
+
+          this.passengers.push(passenger);
+        });
+
+      }
+      this.dataSource = new MatTableDataSource(this.passengers);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
   }
 
   public applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
-  }
+      filterValue = filterValue.trim(); // Remove whitespace
+      filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+      this.dataSource.filter = filterValue;
+    }
 
   public onStatusChange(changedStatus: any): void {
-    console.log('ChangedStatus :', changedStatus);
-    let filterPassengersList: PassengerData[];
-    if (changedStatus.value === 'With infant') {
+      console.log('ChangedStatus :', changedStatus);
+      let filterPassengersList: PassengerData[];
+      if(changedStatus.value === 'With infant') {
       filterPassengersList = this.passengers.filter((passenger: any) => {
         return passenger.status.withInfant;
       });

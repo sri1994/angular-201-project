@@ -1,0 +1,97 @@
+<div class="row no-margin" *ngIf="seatConfig?.length > 0 && !isSeatLayoutLoading">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6" style="text-align: center;">
+        <div>
+            <span class="mat-body-2">
+                Seat layout for passengers requiring special meals.
+            </span>
+        </div>
+        <div class="row" style="border: 2px solid rebeccapurple;background-color: ghostwhite;border-radius: 0.5rem;">
+            <div class="col-lg-2">
+
+            </div>
+            <div class="col-lg-8">
+                <br>
+                <div *ngFor="let seatrow of seatmap">
+
+                    <div class="seatrow">
+
+                        <div *ngFor="let seatobj of seatrow?.seats">
+                            <div class="seat-space" style="color:white ; background-color: white;"
+                                *ngIf="seatobj.seatLabel == ''"> &nbsp;&nbsp;&nbsp; </div>
+
+                            <div [ngClass]="{ 'seat-item' : isEditSeatLayout ,
+                                               'seat-item-edit-mode': !isEditSeatLayout,
+                                                 'seat-available': seatobj.status === 'available',
+                                                 'seat-checkedIn' : seatobj.passengerRequireSpecialMeal,
+                                                'disabled-seat' : seatobj.status === 'available' }"
+                                (click)="selectSeat(seatobj)"
+                                *ngIf="(seatobj.status == 'available' || seatobj.status == 'booked' )&& seatobj.seatLabel != ''">
+                                {{seatobj.seatNo}}</div>
+
+                            <div [ngClass]="{ 'seat-item' : true , 'seat-unavailable' : true, 'seat-checkedIn' : seatobj.passengerStatus === true }"
+                                *ngIf="seatobj.status == 'unavailable' && seatobj.seatLabel != ''">{{seatobj.seatNo}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row mat-body-1">
+            <div class="col-lg-7 text-right">
+                <span>Passenger special meal choice: </span>
+            </div>
+            <div class="col-lg-5">
+                <div style="display: flex; justify-content: center;">
+                    <div class="seat-item seat-checkedIn">
+                    </div>
+                    <div class=""><span>Requires</span></div>
+                    <div class="seat-item seat-available">
+                    </div>
+                    <div class=""><span>Not requires</span></div>
+                </div>
+            </div>
+        </div>
+
+
+        <br>
+        <!-- <div class="selected-seats" *ngIf="cart?.selectedSeats?.length > 0">
+            <h5 class="col-lg-12 no-padding">Selected Seats : </h5>
+            <span *ngFor="let seatLabel of cart.selectedSeats" class="badge badge-primary">{{seatLabel}}</span>
+        </div> -->
+
+    </div>
+    <div class="col-lg-3"></div>
+    <!-- <div class="col-lg-6" *ngIf="selectedPassengers?.length > 0">
+        <div style="text-align: center;">
+            <span class="mat-body-2">Checked in passengers details</span>
+        </div>
+        <div style="height: 16rem; overflow-y: scroll;">
+            <div *ngFor="let seatObject of selectedPassengers.reverse()">
+                <mat-card *ngIf="seatObject.passengerStatus"
+                    style="border: 2px solid rebeccapurple; background-color: ghostwhite;">
+                    <mat-card-content>
+                        <div>
+                            <span class="mat-body">Name: {{ seatObject?.passengerDetails?.name }}</span>
+                        </div>
+                        <div><span class="mat-body">ID: {{ seatObject?.passengerDetails?.name }}</span></div>
+                    </mat-card-content>
+                </mat-card>
+                <br>
+            </div>
+        </div>
+    </div> -->
+</div>
+<div class="row no-margin" *ngIf="seatConfig?.length > 0 && !isSeatLayoutLoading">
+    <div class="col-lg-12" style="text-align: center;">
+        <br>
+        <button mat-raised-button (click)="editSpecialMealChoic()" *ngIf="!isEditSeatLayout" color="primary">Edit special meal choice</button>
+        <button mat-raised-button (click)="modifySpecialMealChoice()" *ngIf="isEditSeatLayout" color="primary">Modify special meal choice</button>
+    </div>
+</div>

@@ -39,19 +39,19 @@
 
       <mat-table class="sphr-mat-table" [dataSource]="dataSource" matSort>
 
-        <!-- ID Column -->
+        
         <ng-container matColumnDef="Name">
           <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
           <mat-cell *matCellDef="let row"> {{ row.name }} </mat-cell>
         </ng-container>
 
-        <!-- Progress Column -->
+        
         <ng-container matColumnDef="Seat">
           <mat-header-cell *matHeaderCellDef mat-sort-header> Seat No. </mat-header-cell>
           <mat-cell *matCellDef="let row"> {{ row.seatNo }} </mat-cell>
         </ng-container>
 
-        <!-- Name Column -->
+        
         <ng-container matColumnDef="AncillaryServices">
           <mat-header-cell *matHeaderCellDef mat-sort-header> Ancillary Services </mat-header-cell>
           <mat-cell *matCellDef="let row">
@@ -61,12 +61,6 @@
           </mat-cell>
         </ng-container>
 
-        <!-- Color Column -->
-        <!-- <ng-container matColumnDef="Status">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
-                <mat-cell *matCellDef="let row"> {{ row.status?.checkedIn }} </mat-cell>
-              </ng-container> -->
-
         <mat-header-row class="sphr-mat-header-row" *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row class="sphr-mat-row" *matRowDef="let row; columns: displayedColumns;">
         </mat-row>
@@ -74,6 +68,7 @@
 
       <mat-paginator [pageSize]="4" [pageSizeOptions]="[2, 4]"></mat-paginator>
     </div>
+  
   </div>
   <div class="col-lg-1">
   </div>

@@ -1,9 +1,23 @@
 <div style="text-align: center">
-    <h1 mat-dialog-title>Success!</h1>
-    <div mat-dialog-content>
-        <p>Selected passengers are checkedin successfully.</p>
-    </div>
+    <br>
     <div>
-        <button mat-raised-button (click)="onOkClick()" color="primary" cdkFocusInitial>Ok</button>
+      <mat-icon aria-hidden="false" aria-label="Example home icon" [ngClass]="{'icon_3x_success': dialogData?.status === 'success', 'icon_3x_failure': dialogData?.status === 'failure'}">{{ dialogData?.status === 'failure' ? 'highlight_off' : 'check_circle_outline' }}</mat-icon>
+    </div>
+    <br>
+    <h1 *ngIf="dialogData?.status === 'failure'" mat-dialog-title>Sorry!</h1>
+    <h1 *ngIf="dialogData?.status === 'success'" mat-dialog-title>Success!</h1>
+    <div mat-dialog-content class="mat-body-1">
+        <p *ngIf="dialogData?.type ==='check-in' && dialogData?.status === 'success'">Selected passengers are checkedin successfully.</p>
+        <p *ngIf="dialogData?.type ==='special-meal' && dialogData?.status === 'success'">Special meal preferences are updated.</p>
+        <p *ngIf="dialogData?.type ==='ancillary-services' && dialogData?.status === 'success'">Ancillary services required by passenger is updated.</p>
+        <p *ngIf="dialogData?.type ==='check-in' && dialogData?.status === 'failure'">Due to some technical issue, selected passengers could not be checkedin successfully.</p>
+        <p *ngIf="dialogData?.type ==='special-meal' && dialogData?.status === 'failure'">Due to some technical issue, special meal preferences could not be updated successfully.</p>
+        <p *ngIf="dialogData?.type ==='ancillary-services' && dialogData?.status === 'failure'">Due to some technical issue, Ancillary services required by passenger could not be updated successfully.</p>
+        <br>
+        <p *ngIf="dialogData?.status === 'failure'">Please try again!</p>
+    </div>
+    <br>
+    <div>
+        <button mat-raised-button (click)="onOkClick()" color="primary">Ok</button>
     </div>
 </div>

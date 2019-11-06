@@ -7,6 +7,7 @@ export interface flightsState {
   updateFlightsLoading: boolean;
   flightsListError: Error;
   updateFlightsError: Error;
+  type: any;
 };
 
 export interface flightState {
@@ -20,7 +21,8 @@ export const initialFlightsState: flightsState = {
   flightsListLoading: true,
   updateFlightsLoading: true,
   flightsListError: undefined,
-  updateFlightsError: undefined
+  updateFlightsError: undefined,
+  type: undefined
 };
 
 export const initialFlightState: flightState = {
@@ -30,6 +32,8 @@ export const initialFlightState: flightState = {
   };
 
 export function flightsReducer(state: flightsState = initialFlightsState, action: FlightActions.Actions) {
+  console.log('STATE :', state);
+  console.log('Action :', action);
   switch(action.type) {
     case FlightActions.GET_FLIGHTS: {
       return { ...state, flightsListLoading: true, updateFlightsLoading: true};
@@ -38,16 +42,16 @@ export function flightsReducer(state: flightsState = initialFlightsState, action
       return {...state, list: action.payload, flightsListLoading: false, updateFlightsLoading: true};
     }
     case FlightActions.GET_FLIGHTS_FAILURE: {
-      return {...state, flightsListError: action.payload, updateFlightsError: '', flightsListLoading: false, updateFlightsLoading: true};
+      return {...state, flightsListError: action.payload, flightsListLoading: false, updateFlightsLoading: true};
     }
     case FlightActions.UPDATE_FLIGHTS_LIST: {
-      return { ...state, flightsListLoading: true, updateFlightsLoading: true};
+      return { ...state, flightsListLoading: true, updateFlightsLoading: true, type: action.payloadType};
     }
     case FlightActions.UPDATE_FLIGHTS_LIST_SUCCESS: {
-      return {...state, list: modifyList(state.list, action.payload), flightsListLoading: true, updateFlightsLoading: false};
+      return {...state, list: modifyList(state.list, action.payload), flightsListLoading: true, updateFlightsLoading: false, type: action.payloadType};
     }
     case FlightActions.UPDATE_FLIGHTS_LIST_FAILURE: {
-      return {...state, flightsListError: action.payload, updateFlightsError: '', flightsListLoading: true, updateFlightsLoading: false};
+      return {...state, updateFlightsError: action.payload, flightsListLoading: true, updateFlightsLoading: false, type: action.payloadType};
     }
     // case FlightActions.GET_FLIGHT_DETAILS: {
     //   return { ...state, loading: true};
@@ -66,7 +70,7 @@ export function flightsReducer(state: flightsState = initialFlightsState, action
 export function flightReducer(state: flightState = initialFlightState, action: FlightActions.Actions) {
     switch(action.type) {
       case FlightActions.GET_FLIGHT_DETAILS: {
-        return { ...state, loading: true};
+        return {...state, loading: true};
       }
       case FlightActions.GET_FLIGHT_DETAILS_SUCCESS: {
         return {...state, flightData: action.payload, loading: false};

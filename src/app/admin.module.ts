@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 import { Routes, RouterModule } from '@angular/router';
+import { SharedModule } from './shared.module';
 
 const routes: Routes = [
   { path: 'admin-dashboard', component: AdminDashboardComponent }
@@ -12,7 +13,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [AdminDashboardComponent],
   imports: [
-    CommonModule,
+    SharedModule,
     RouterModule.forChild(routes)
   ]
 })

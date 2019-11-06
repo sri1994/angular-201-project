@@ -13,8 +13,8 @@ import { sample } from 'rxjs/operators';
 
 
 export interface DialogData {
-  animal: string;
-  name: string;
+  type: string;
+  status: string;
 }
 
 @Component({
@@ -44,10 +44,13 @@ export class CheckinComponent implements OnInit {
 
   public isCheckInPassenger: boolean = false;
 
+  public flightsState: Observable<flights.flightsState>;
+
   constructor(private store: Store<AppState>, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.flightsList = this.store.select(store => store.flightsState.list);
+    this.flightsState = this.store.select(store => store.flightsState);
     this.updateFlightsLoading = this.store.select(store => store.flightsState.updateFlightsLoading);
     this.store.dispatch(new FlightActions.GetFlightsAction());
     // this.store.dispatch(new FlightActions.GetFlightDetailsAction('f1'));
@@ -65,10 +68,19 @@ export class CheckinComponent implements OnInit {
     //   this.flightDetails = data;
     // });
 
-    this.updateFlightsLoading.subscribe((loading: boolean) => {
-      this.loading = loading;
-      console.log('Loading :', this.loading);
-      if (!this.loading) {
+    // this.updateFlightsLoading.subscribe((loading: boolean) => {
+    //   this.loading = loading;
+    //   console.log('Loading in checkin :', this.loading);
+    //   if (!this.loading) {
+    //     this.openDialog();
+    //   }
+    // });
+
+    this.flightsState.subscribe((flightState: any) => {
+      console.log('FLIGHTSTATE in subscription :', flightState);
+      this.loading = flightState.updateFlightsLoading;
+      console.log('Loading in checkin :', this.loading);
+      if (!this.loading && flightState.type === 'check-in') {
         this.openDialog();
       }
     });
@@ -90,13 +102,13 @@ export class CheckinComponent implements OnInit {
     console.log('Event :', event);
     const flightData: any = this.updatedFlightsList[this.updatedFlightsList.findIndex((d => d.id === event.flightId))];
     flightData.seatConfig = event.seatList;
-    this.store.dispatch(new FlightActions.UpdateFlightsListAction({ flightId: event.flightId, flightData: flightData }));
+    this.store.dispatch(new FlightActions.UpdateFlightsListAction({ flightId: event.flightId, flightData: flightData, type: 'check-in' }, 'check-in'));
     this.selectedFlight = '';
     this.flightDetails = '';
   }
 
   openDialog(): void {
-    const sampleData: DialogData = { animal: '', name: '' }
+    const sampleData: DialogData = { type: 'check-in', status: 'success' }
     const dialogRef = this.dialog.open(ActionModalComponent, {
       width: '250px',
       data: sampleData

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { CommonToolbarComponent } from './common-toolbar/common-toolbar.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule }    from '@angular/forms';
 
 import {A11yModule} from '@angular/cdk/a11y';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -53,6 +52,7 @@ import { authReducer } from './store/reducers/auth.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './store/effects/auth.effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [CommonToolbarComponent],
@@ -101,7 +101,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatTooltipModule,
     MatTreeModule,
     PortalModule,
-    ScrollingModule
+    ScrollingModule,
+    ReactiveFormsModule
   ],
   exports: [
     CommonToolbarComponent, CommonModule,
@@ -148,7 +149,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatTooltipModule,
     MatTreeModule,
     PortalModule,
-    ScrollingModule
+    ScrollingModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

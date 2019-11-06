@@ -15,11 +15,12 @@ export interface DialogData {
 export class ActionModalComponent implements OnInit {
 
   ngOnInit() {
+    console.log('dialogData :', this.dialogData);
   }
 
   constructor(
     public dialogRef: MatDialogRef<ActionModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    @Inject(MAT_DIALOG_DATA) public dialogData: DialogData) {}
 
   onOkClick(): void {
     this.dialogRef.close();
