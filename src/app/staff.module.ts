@@ -11,6 +11,8 @@ import { ActionModalComponent } from './action-modal/action-modal.component';
 import { PassengersListComponent } from './passengers-list/passengers-list.component';
 import { ModifySpecialMealComponent } from './modify-special-meal/modify-special-meal.component';
 import { ModifyAncillaryServicesComponent } from './modify-ancillary-services/modify-ancillary-services.component';
+import { AddInflightShoppingRequestComponent } from './add-inflight-shopping-request/add-inflight-shopping-request.component';
+import { AddInflightShoppingConfirmModalComponent } from './add-inflight-shopping-confirm-modal/add-inflight-shopping-confirm-modal.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '/check-in', pathMatch: 'full' },
@@ -25,11 +27,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [PassengerBoardingComponent, InFlightComponent, CheckinComponent, SeatMapComponent, ActionModalComponent, PassengersListComponent, ModifySpecialMealComponent, ModifyAncillaryServicesComponent],
+  declarations: [PassengerBoardingComponent, InFlightComponent, CheckinComponent, SeatMapComponent, ModifySpecialMealComponent, ModifyAncillaryServicesComponent, AddInflightShoppingRequestComponent, AddInflightShoppingConfirmModalComponent],
   imports: [
     SharedModule,
     RouterModule.forChild(routes)
   ],
-  entryComponents: [ActionModalComponent]
+  entryComponents: [ActionModalComponent, AddInflightShoppingConfirmModalComponent]
 })
 export class StaffModule { }

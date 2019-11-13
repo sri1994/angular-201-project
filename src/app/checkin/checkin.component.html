@@ -51,7 +51,7 @@ background-color: ghostwhite;">
 <br>
 
 <div *ngIf="selectedFlight && isShowPassengers">
-    <app-passengers-list [flightId]="selectedFlight?.id"></app-passengers-list>
+    <app-passengers-list [fromStaff]="true" [flightId]="selectedFlight?.id"></app-passengers-list>
 </div>
 
 <br>

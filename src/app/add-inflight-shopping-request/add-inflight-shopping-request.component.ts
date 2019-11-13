@@ -6,17 +6,24 @@ import { Observable } from 'rxjs';
 import * as FlightActions from './../store/actions/flights.actions';
 import { applySourceSpanToStatementIfNeeded } from '@angular/compiler/src/output/output_ast';
 import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AddInflightShoppingConfirmModalComponent } from '../add-inflight-shopping-confirm-modal/add-inflight-shopping-confirm-modal.component';
+
+export interface inFlightDialogData {
+  selectedState: string;
+  passenger: any;
+}
 
 @Component({
-  selector: 'app-modify-ancillary-services',
-  templateUrl: './modify-ancillary-services.component.html',
-  styleUrls: ['./modify-ancillary-services.component.scss']
+  selector: 'app-add-inflight-shopping-request',
+  templateUrl: './add-inflight-shopping-request.component.html',
+  styleUrls: ['./add-inflight-shopping-request.component.scss']
 })
-export class ModifyAncillaryServicesComponent implements OnInit {
+export class AddInflightShoppingRequestComponent implements OnInit {
 
   @Input() fid: string;
 
-  @Output() ancillaryChangePayload: EventEmitter<any> = new EventEmitter();
+  @Output() addShoppingRequestChangePayload: EventEmitter<any> = new EventEmitter();
 
   public seatConfig: any[] = [];
   public seatmap: any[] = [];
@@ -31,6 +38,7 @@ export class ModifyAncillaryServicesComponent implements OnInit {
   public ancillaryFormArray: FormArray;
   public isPassengersLoading: boolean = false;
   public isEditAncillaryServices: boolean = false;
+  public inFlightShoppingAction: any = '';
 
   private seatChartConfig = {
     showRowsLabel: false,
@@ -55,15 +63,7 @@ export class ModifyAncillaryServicesComponent implements OnInit {
   public flightDetails$: Observable<flights.flightState>;
   public flightDetailLoader$: Observable<any>;
 
-  constructor(private store: Store<AppState>, private changeDetector: ChangeDetectorRef, private formBuilder: FormBuilder) {
-
-    this.ancillaryForm = this.formBuilder.group({
-      ancillaryList: this.formBuilder.array([])
-    });
-
-    // this.createItem('Airport parking', true)
-
-  }
+  constructor(private store: Store<AppState>, private changeDetector: ChangeDetectorRef, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.flightDetails$ = this.store.select(store => store.flightState.flightData);
@@ -95,18 +95,6 @@ export class ModifyAncillaryServicesComponent implements OnInit {
     // })
   }
 
-  public createItem(label: string, status: boolean): FormGroup {
-    return new FormGroup({
-      label: new FormControl(label),
-      status: new FormControl(status)
-    });
-  }
-
-  public addItem(ancillaryObject: any): void {
-    let control = <FormArray>this.ancillaryForm.controls.ancillaryList;
-    control.push(this.createItem(ancillaryObject.label, ancillaryObject.status));
-  }
-
   public getPassengerList(seatConfig: any[]): void {
     this.passengerList = [];
     console.log('SEATCONFIG :', seatConfig);
@@ -123,48 +111,46 @@ export class ModifyAncillaryServicesComponent implements OnInit {
 
   public onPassengerSelectionChanged(selectedPass: any): void {
     console.log('Selected passenger :', this.selectedPassenger);
-    let control = <FormArray>this.ancillaryForm.controls.ancillaryList;
-    control.clear();
-    this.selectedPassenger.passenger.ancillaryServices.forEach((anciService: any) => {
-      this.addItem(anciService);
-    });
-    // this.flightDetails.ancillaryServicesPerFlight.forEach((anciService: any) => {
+    // let control = <FormArray>this.ancillaryForm.controls.ancillaryList;
+    // control.clear();
+    // this.selectedPassenger.passenger.ancillaryServices.forEach((anciService: any) => {
     //   this.addItem(anciService);
     // });
   }
 
-  public editAncillaryServices(): void {
-    this.isEditAncillaryServices = true;
-  }
-
-  public modifyAncillaryServices(): void {
-    console.log('FORM modifyAncillaryServices :', this.ancillaryForm.get('ancillaryList').value);
-    this.formatPayload();
-    this.isEditAncillaryServices = false;
-  }
-
-  public onAncillaryServicesChanged(event: Event): void {
-    if (this.isEditAncillaryServices) {
-      console.log('FORM :', this.ancillaryForm.get('ancillaryList').value);
-    } else {
-      event.preventDefault();
-    }
-  }
-
-  public formatPayload(): void {
-    console.log('SELECTED PASSENGERS :', this.selectedPassengers);
-    let seatList: any[] = this.seatConfig;
-    seatList[0].seats.forEach((seat: any, index: any) => {
-      if (seat.serialNo === this.selectedPassenger.seatNo) {
-        seatList[0].seats[index].passengerDetails.ancillaryServices = this.ancillaryForm.get('ancillaryList').value;
-        return false;
-      } else {
-        return true;
-      }
+  public openInFlightDialog(inFlightShoppingState: string): void {
+    console.log('inFlightShoppingState :', inFlightShoppingState);
+    this.inFlightShoppingAction = inFlightShoppingState;
+    const sampleData: inFlightDialogData = { selectedState: inFlightShoppingState, passenger: this.selectedPassenger.passenger };
+    const dialogRef = this.dialog.open(AddInflightShoppingConfirmModalComponent, {
+      width: '30rem',
+      data: sampleData
     });
 
-    console.log('SEAT LIST :', seatList);
-    this.ancillaryChangePayload.emit({ seatList, flightId: this.fid });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+      console.log('Result :', result);
+      this.formatPayload(result);
+    });
+  }
+
+  private formatPayload(result: any): void {
+    if (result) {
+      let seatList: any[] = this.seatConfig;
+      seatList[0].seats.forEach((seat: any, index: any) => {
+        if (seat.serialNo === this.selectedPassenger.seatNo) {
+          seatList[0].seats[index].passengerDetails.isEntitledToInFlightShopping = this.inFlightShoppingAction === 'ADD' && result === 'yes' ? true : false;
+          return false;
+        } else {
+          return true;
+        }
+      });
+
+      console.log('SEAT LIST :', seatList);
+      this.addShoppingRequestChangePayload.emit({ seatList, flightId: this.fid });
+    }
+
   }
 
 }

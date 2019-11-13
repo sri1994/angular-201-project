@@ -53,9 +53,11 @@ import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './store/effects/auth.effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { PassengersListComponent } from './passengers-list/passengers-list.component';
+import { ActionModalComponent } from './action-modal/action-modal.component';
 
 @NgModule({
-  declarations: [CommonToolbarComponent],
+  declarations: [PassengersListComponent, CommonToolbarComponent, ActionModalComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -105,7 +107,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   exports: [
-    CommonToolbarComponent, CommonModule,
+    PassengersListComponent,
+    CommonToolbarComponent,
+    ActionModalComponent, 
+    CommonModule,
     HttpClientModule,
     FormsModule,
     A11yModule,

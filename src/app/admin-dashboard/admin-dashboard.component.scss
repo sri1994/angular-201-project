@@ -1,0 +1,37 @@
+.text-center {
+    text-align: center;
+}
+
+.airline-check-in-buttons {
+
+    @extend .text-center;
+     button {
+      margin-right: 2rem;
+     }
+
+}
+
+.airline-ancillary-services-buttons {
+    @extend .text-center;
+    button {
+      margin-right: 5rem;
+    }
+}
+
+.btn-clicked {
+    background-color: green;
+    color: white;
+}
+
+.btn-unclicked {
+    background-color: #673ab7;
+    color: white;
+}
+
+.icon_2x {
+    transform: scale(2);
+}
+
+.custom-icon-button {
+    width: auto !important;
+}

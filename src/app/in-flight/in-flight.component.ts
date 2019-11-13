@@ -44,6 +44,8 @@ export class InFlightComponent implements OnInit {
 
   public isAncillaryServices: boolean = false;
 
+  public isInflightShoppingRequest: boolean = false;
+
   public flightsState: Observable<flights.flightsState>;
 
   constructor(private store: Store<AppState>, public dialog: MatDialog) { }
@@ -80,7 +82,7 @@ export class InFlightComponent implements OnInit {
       console.log('FLIGHTSTATE in subscription :', flightState);
       this.loading = flightState.updateFlightsLoading;
       console.log('Loading in checkin :', this.loading);
-      if (!this.loading && (flightState.type === 'special-meal' || flightState.type === 'ancillary-services')) {
+      if (!this.loading && (flightState.type === 'special-meal' || flightState.type === 'ancillary-services' || flightState.type === 'add-in-flight-shopping')) {
         this.openDialog(flightState.type, flightState.updateFlightsError);
       }
     });
@@ -91,10 +93,16 @@ export class InFlightComponent implements OnInit {
     if (actionType === 'specialMeal') {
       this.selectedFlight = '';
       this.isAncillaryServices = false;
+      this.isInflightShoppingRequest = false;
       this.isSpecialMeal = true;
     } else if (actionType === 'ancillaryServices') {
       this.isSpecialMeal = false;
       this.isAncillaryServices = true;
+      this.isInflightShoppingRequest = false;
+    } else if (actionType === 'inFlightShoppingRequest') {
+      this.isSpecialMeal = false;
+      this.isAncillaryServices = false;
+      this.isInflightShoppingRequest = true;
     }
   }
 

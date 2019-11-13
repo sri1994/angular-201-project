@@ -10,7 +10,9 @@ import { AppState } from './../store/app.states';
 import * as AuthActions from './../store/actions/auth.actions';
 import { AuthService } from './../auth.service';
 
-
+import { AuthService as SocialAuthService} from "angularx-social-login";
+import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
+ 
 @Component({
   selector: 'app-log-in',
   templateUrl: './login.component.html',
@@ -47,6 +49,10 @@ export class LoginComponent implements OnInit {
       this.authService.staffCredential = this.getCredentialObject(credentialList, 'staff');
       console.log('this.authService.staffCredential :', this.authService.staffCredential);
     });
+
+    // this.socialAuthService.authState.subscribe((user: any) => {
+    //   console.log('SOCIAL MEDIA USER :', user);
+    // })
   }
 
   private getCredentialObject(credentialList: any[], objType: any): any {
@@ -83,5 +89,17 @@ export class LoginComponent implements OnInit {
       }
     }
   }
+
+  // signInWithGoogle(): void {
+  //   this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  // }
+ 
+  // signInWithFB(): void {
+  //   this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  // } 
+ 
+  // signOut(): void {
+  //   this.socialAuthService.signOut();
+  // }
 
 }

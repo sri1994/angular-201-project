@@ -1,0 +1,56 @@
+<div style="text-align: center">
+    <br>
+    <div>
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+            [ngClass]="{'icon_3x_success': dialogData?.action === 'add', 'icon_3x_failure': dialogData?.action === 'delete'}">
+            {{ dialogData?.action === 'delete' ? 'delete' :  dialogData?.type === 'ancillary-services' ? 'add_circle' : (dialogData?.type === 'special-meals' ? 'fastfood' : 'add_shopping_cart') }}</mat-icon>
+    </div>
+    <br>
+    <h1 *ngIf="dialogData?.action === 'add' && dialogData?.type === 'ancillary-services'" mat-dialog-title>Add ancillary service!</h1>
+    <h1 *ngIf="dialogData?.action === 'delete' && dialogData?.type === 'ancillary-services'" mat-dialog-title>Delete ancillary service!</h1>
+    <h1 *ngIf="dialogData?.action === 'add' && dialogData?.type === 'special-meals'" mat-dialog-title>Add special meal!</h1>
+    <h1 *ngIf="dialogData?.action === 'delete' && dialogData?.type === 'special-meals'" mat-dialog-title>Delete special meal!</h1>
+    <h1 *ngIf="dialogData?.action === 'add' && dialogData?.type === 'shopping-items'" mat-dialog-title>Add shopping item!</h1>
+    <h1 *ngIf="dialogData?.action === 'delete' && dialogData?.type === 'shopping-items'" mat-dialog-title>Delete shopping item!</h1>
+    <div mat-dialog-content *ngIf="dialogData?.action === 'add'">
+        <form [formGroup]="ancillaryServicesFormGroup">
+            <div formArrayName="ancillaryServiceFormArray"
+                *ngFor="let item of ancillaryServicesFormGroup?.get('ancillaryServiceFormArray')?.controls; let i = index;">
+                <div [formGroupName]="i">
+                    <mat-form-field>
+                        <input *ngIf="dialogData?.type === 'ancillary-services'" matInput formControlName="label" [value]="item?.get('label')?.value"
+                            placeholder="Enter ancillary service" name="ancillary-services">
+                            <input *ngIf="dialogData?.type === 'special-meals'" matInput formControlName="label" [value]="item?.get('label')?.value"
+                            placeholder="Enter special meals" name="special-meals">
+                            <input *ngIf="dialogData?.type === 'shopping-items'" matInput formControlName="label" [value]="item?.get('label')?.value"
+                            placeholder="Enter shopping items" name="shopping-items">
+                    </mat-form-field>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <button mat-icon-button class="custom-icon-button" color="primary" (click)="addAnotherAncillaryObject()"
+                aria-label="Example icon-button with a heart icon">
+                <mat-icon>add_circle</mat-icon>&nbsp;Add another
+            </button>
+        </form>
+    </div>
+    <div mat-dialog-content *ngIf="dialogData?.action === 'delete'">
+        <mat-form-field>
+            <mat-select [(ngModel)]="selectedAncillaryService" (selectionChange)="onAncillarySelectionChanged($event)"
+                placeholder="Select service">
+                <mat-option *ngFor="let ancillary of ancillaryServices" [value]="ancillary">
+                    {{ ancillary?.label }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+    </div>
+    <br>
+    <div>
+        <button mat-raised-button (click)="onActionButtonClicked()" color="primary" *ngIf="dialogData?.action === 'add'"
+            [disabled]="!this.ancillaryServicesFormGroup.dirty">Add</button>
+        <button mat-raised-button (click)="onActionButtonClicked()" color="warn" *ngIf="dialogData?.action === 'delete'"
+            [disabled]="!selectedAncillaryService">Delete</button>
+    </div>
+</div>

@@ -12,7 +12,7 @@
     },
     {
       "id": "staff",
-      "isAuthenticated": true,
+      "isAuthenticated": false,
       "userType": "staff",
       "user": {
         "email": "prasad@gmail.com",
@@ -46,7 +46,11 @@
               "passengerDetails": {
                 "name": "srinivas",
                 "id": "ertdf3",
+                "passport": "P23IN340",
+                "address": "#30, 4th block, Jayanagar, Bengaluru-28",
+                "dateOfBirth": "25/10/1993",
                 "specialMeals": true,
+                "isEntitledToInFlightShopping": true,
                 "ancillaryServices": [
                   {
                     "label": "Airport parking",
@@ -54,7 +58,7 @@
                   },
                   {
                     "label": "Lounge access",
-                    "status": false
+                    "status": true
                   }
                 ]
               }
@@ -69,7 +73,11 @@
               "passengerDetails": {
                 "name": "srinivas1",
                 "id": "ertdf3",
-                "specialMeals": false,
+                "passport": "P23IN346",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1996",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": true,
                 "ancillaryServices": [
                   {
                     "label": "Airport parking",
@@ -85,14 +93,18 @@
             {
               "serialNo": "03",
               "status": {
-                "checkedIn": true,
+                "checkedIn": false,
                 "wheelChair": true,
                 "withInfant": true
               },
               "passengerDetails": {
                 "name": "srinivas2",
                 "id": "ertdf3",
+                "passport": "P3234IBG",
+                "address": "dsfdsgfdggvcbvcbvcnb56",
+                "dateOfBirth": "25/10/1997",
                 "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
                 "ancillaryServices": [
                   {
                     "label": "Airport parking",
@@ -115,7 +127,11 @@
               "passengerDetails": {
                 "name": "srinivas3",
                 "id": "ertdf3",
+                "passport": "",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "",
                 "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
                 "ancillaryServices": [
                   {
                     "label": "Airport parking",
@@ -138,7 +154,11 @@
               "passengerDetails": {
                 "name": "srinivas4",
                 "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "",
+                "dateOfBirth": "",
                 "specialMeals": false,
+                "isEntitledToInFlightShopping": true,
                 "ancillaryServices": [
                   {
                     "label": "Airport parking",
@@ -154,14 +174,18 @@
             {
               "serialNo": "06",
               "status": {
-                "checkedIn": false,
+                "checkedIn": true,
                 "wheelChair": false,
                 "withInfant": false
               },
               "passengerDetails": {
                 "name": "srinivas5",
                 "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
                 "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
                 "ancillaryServices": [
                   {
                     "label": "Airport parking",
@@ -206,6 +230,52 @@
             }
           ]
         }
+      ],
+      "ancillaryServicesPerFlight": [
+        {
+          "label": "Priority Boarding",
+          "value": true
+        },
+        {
+          "label": "Airport taxi",
+          "value": true
+        },
+        {
+          "label": "Hotel booking",
+          "value": true
+        },
+        {
+          "label": "Currency exchange",
+          "value": true
+        }
+      ],
+      "specialMealsPerFlight": [
+        {
+          "label": "North indian special",
+          "value": true
+        },
+        {
+          "label": "South indian special",
+          "value": true
+        },
+        {
+          "label": "Mysore Masala Dose",
+          "value": true
+        },
+        {
+          "label": "Vada paav",
+          "value": true
+        }
+      ],
+      "shoppingItemsPerFlight": [
+        {
+          "label": "Chennapatna wooden toys",
+          "value": true
+        },
+        {
+          "label": "Vanity bags",
+          "value": true
+        }
       ]
     },
     {
@@ -232,7 +302,21 @@
               "passengerDetails": {
                 "name": "Saptarishi",
                 "id": "ertdf3",
-                "specialMeals": false
+                "passport": "P23IN341",
+                "address": "#30, 4th block, Jayanagar, Bengaluru-28",
+                "dateOfBirth": "25/10/1993",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": false
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  }
+                ]
               }
             },
             {
@@ -245,7 +329,21 @@
               "passengerDetails": {
                 "name": "Jamaical",
                 "id": "ertdf3",
-                "specialMeals": true
+                "passport": "P23IN346",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1996",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": true
+                  }
+                ]
               }
             },
             {
@@ -258,33 +356,75 @@
               "passengerDetails": {
                 "name": "Buongine",
                 "id": "ertdf3",
-                "specialMeals": true
+                "passport": "P3234IBG",
+                "address": "dsfdsgfdggvcbvcbvcnb56",
+                "dateOfBirth": "25/10/1997",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": false
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  }
+                ]
               }
             },
             {
               "serialNo": "04",
               "status": {
-                "checkedIn": false,
+                "checkedIn": true,
                 "wheelChair": false,
                 "withInfant": false
               },
               "passengerDetails": {
                 "name": "Lunai Juda",
                 "id": "ertdf3",
-                "specialMeals": false
+                "passport": "",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  }
+                ]
               }
             },
             {
               "serialNo": "05",
               "status": {
-                "checkedIn": false,
+                "checkedIn": true,
                 "wheelChair": false,
                 "withInfant": false
               },
               "passengerDetails": {
                 "name": "Naane hero",
                 "id": "ertdf3",
-                "specialMeals": false
+                "passport": "P23IN345",
+                "address": "",
+                "dateOfBirth": "",
+                "specialMeals": false,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  }
+                ]
               }
             },
             {
@@ -297,7 +437,21 @@
               "passengerDetails": {
                 "name": "Apoora jan",
                 "id": "ertdf3",
-                "specialMeals": true
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  }
+                ]
               }
             }
           ],
@@ -315,6 +469,16 @@
               "layout": "ggg__ggg"
             }
           ]
+        }
+      ],
+      "ancillaryServicesPerFlight": [
+        {
+          "label": "Airport Taxi",
+          "value": true
+        },
+        {
+          "label": "Hotel booking",
+          "value": true
         }
       ]
     }

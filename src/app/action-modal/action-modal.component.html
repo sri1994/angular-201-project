@@ -10,9 +10,25 @@
         <p *ngIf="dialogData?.type ==='check-in' && dialogData?.status === 'success'">Selected passengers are checkedin successfully.</p>
         <p *ngIf="dialogData?.type ==='special-meal' && dialogData?.status === 'success'">Special meal preferences are updated.</p>
         <p *ngIf="dialogData?.type ==='ancillary-services' && dialogData?.status === 'success'">Ancillary services required by passenger is updated.</p>
+        <p *ngIf="dialogData?.type ==='add-in-flight-shopping' && dialogData?.status === 'success'">Entitlement of in flight shopping for passenger is updated successfully.</p>
+        <p *ngIf="dialogData?.type ==='passenger-detail' && dialogData?.status === 'success'">Passenger details are updated successfully.</p>
+        <p *ngIf="dialogData?.type ==='add-ancillary-service' && dialogData?.status === 'success'">New ancillary services are added successfully.</p>
+        <p *ngIf="dialogData?.type ==='delete-ancillary-service' && dialogData?.status === 'success'">Selected ancillary service is deleted successfully.</p>
+        <p *ngIf="dialogData?.type ==='add-special-meals' && dialogData?.status === 'success'">New special meals are added successfully.</p>
+        <p *ngIf="dialogData?.type ==='delete-special-meal' && dialogData?.status === 'success'">Selected special meal is deleted successfully.</p>
+        <p *ngIf="dialogData?.type ==='add-shopping-items' && dialogData?.status === 'success'">New shopping items are added successfully.</p>
+        <p *ngIf="dialogData?.type ==='delete-shopping-item' && dialogData?.status === 'success'">Selected shopping item is deleted successfully.</p>
         <p *ngIf="dialogData?.type ==='check-in' && dialogData?.status === 'failure'">Due to some technical issue, selected passengers could not be checkedin successfully.</p>
         <p *ngIf="dialogData?.type ==='special-meal' && dialogData?.status === 'failure'">Due to some technical issue, special meal preferences could not be updated successfully.</p>
         <p *ngIf="dialogData?.type ==='ancillary-services' && dialogData?.status === 'failure'">Due to some technical issue, Ancillary services required by passenger could not be updated successfully.</p>
+        <p *ngIf="dialogData?.type ==='add-in-flight-shopping' && dialogData?.status === 'failure'">Due to some technical issue, Entitlement of in flight shopping for passenger could not be updated successfully.</p>
+        <p *ngIf="dialogData?.type ==='passenger-detail' && dialogData?.status === 'failure'">Due to some technical issue, passenger details could not be updated successfully.</p>
+        <p *ngIf="dialogData?.type ==='add-ancillary-service' && dialogData?.status === 'failure'">Due to some technical issue, New ancillary services could not be added successfully.</p>
+        <p *ngIf="dialogData?.type ==='delete-ancillary-service' && dialogData?.status === 'failure'">Due to some technical issue, selected ancillary service could not be deleted successfully.</p>
+        <p *ngIf="dialogData?.type ==='add-special-meals' && dialogData?.status === 'failure'">Due to some technical issue, New special meals could not be added successfully.</p>
+        <p *ngIf="dialogData?.type ==='delete-special-meal' && dialogData?.status === 'failure'">Due to some technical issue, selected special meal could not be deleted successfully.</p>
+        <p *ngIf="dialogData?.type ==='add-shopping-items' && dialogData?.status === 'failure'">Due to some technical issue, New shopping items could not be added successfully.</p>
+        <p *ngIf="dialogData?.type ==='delete-shopping-item' && dialogData?.status === 'failure'">Due to some technical issue, selected shopping item could not be deleted successfully.</p>
         <br>
         <p *ngIf="dialogData?.status === 'failure'">Please try again!</p>
     </div>

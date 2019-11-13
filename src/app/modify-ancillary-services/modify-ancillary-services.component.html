@@ -20,7 +20,7 @@
 <div class="row no-margin" *ngIf="selectedPassenger">
     <div class="col-lg-3"></div>
     <div class="col-lg-6" style="text-align: center;">
-            <span class="mat-body-2">Ancillary services required by {{ selectedPassenger?.name }}</span>
+            <span class="mat-body-2">Ancillary services required by {{ selectedPassenger?.passenger?.name }}</span>
     </div>
     <div class="col-lg-3"></div>
 </div>
@@ -34,22 +34,10 @@
     background-color: ghostwhite;text-align: center;">
         <br>
         <form [formGroup]="ancillaryForm">
-            <!-- <div formArrayName="ancillaryList" 
-               *ngFor="let arrayItem of selectedPassenger?.ancillaryServices; let i=index">
-                  
-               <input [id]="arrayItem?.label" type="checkbox"
-                  [formControl]="ancillaryList[i]">
-               <label [for]="arrayItem?.label" class="array-item-title">
-                  {{arrayItem?.label}}</label>
-            
-            </div> -->
 
             <div formArrayName="ancillaryList"
                 *ngFor="let item of ancillaryForm.get('ancillaryList').controls; let i = index;">
                 <div [formGroupName]="i">
-                    <!-- <input formControlName="status" type="checkbox" id="item?.get('label')?.value">
-                    <label for="item?.get('label')?.value" class="array-item-title">
-                        {{ item?.get('label')?.value }}</label> -->
                     <mat-checkbox [disableRipple]="true" (click)="onAncillaryServicesChanged($event)" formControlName="status" color="primary">{{ item?.get('label')?.value }}
                     </mat-checkbox>
                 </div>

@@ -20,7 +20,7 @@
   </div>
   <div class="col-lg-6">
     <mat-form-field>
-      <mat-select [(value)]="selectedStatus" placeholder="Choose status to filter"
+      <mat-select [(value)]="selectedStatus" placeholder="{{ fromStaff ? 'Choose status to filter' : 'Filter passengers by missing mandatory requirements (passport, address, date of birth)' }}"
         (selectionChange)="onStatusChange($event)">
         <mat-option *ngFor="let status of passengerStatusList" [value]="status">{{ status }}</mat-option>
       </mat-select>
@@ -55,8 +55,8 @@
         <ng-container matColumnDef="AncillaryServices">
           <mat-header-cell *matHeaderCellDef mat-sort-header> Ancillary Services </mat-header-cell>
           <mat-cell *matCellDef="let row">
-            <div class="mat-body-2" *ngFor="let service of row.ancillaryServices">
-              <span>{{ service }}, &nbsp;</span>
+            <div class="mat-body-2" *ngFor="let serviceObj of row.ancillaryServices">
+              <span>{{ serviceObj?.label }}, &nbsp;</span>
             </div>
           </mat-cell>
         </ng-container>

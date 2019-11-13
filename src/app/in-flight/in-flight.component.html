@@ -7,10 +7,11 @@ background-color: ghostwhite;">
         <br>
 
         <div class="airline-check-in-buttons">
-            <button mat-raised-button color="primary" (click)="showFlights('specialMeal')">Add/Remove special
+            <button mat-raised-button [ngClass]="{ 'btn-clicked': isSpecialMeal, 'btn-unclicked': !isSpecialMeal }" (click)="showFlights('specialMeal')">Add/Remove special
                 meal</button>
-            <button mat-raised-button (click)="showFlights('ancillaryServices')" color="primary">Add/Remove ancillary
+            <button mat-raised-button [ngClass]="{ 'btn-clicked': isAncillaryServices, 'btn-unclicked': !isAncillaryServices }" (click)="showFlights('ancillaryServices')" color="primary">Add/Remove ancillary
                 services</button>
+            <button mat-raised-button [ngClass]="{ 'btn-clicked': isInflightShoppingRequest, 'btn-unclicked': !isInflightShoppingRequest }" (click)="showFlights('inFlightShoppingRequest')" color="primary">Add in-flight shopping request</button>
         </div>
 
         <br>
@@ -34,11 +35,19 @@ background-color: ghostwhite;">
 <br>
 
 <div *ngIf="selectedFlight && isSpecialMeal">
-    <app-modify-special-meal [fid]="selectedFlight?.id" (checkedInPayload)="updateCheckedInPayload($event, 'special-meal')">
+    <app-modify-special-meal [fid]="selectedFlight?.id"
+        (checkedInPayload)="updateCheckedInPayload($event, 'special-meal')">
     </app-modify-special-meal>
 </div>
 
 <div *ngIf="selectedFlight && isAncillaryServices">
-    <app-modify-ancillary-services [fid]="selectedFlight?.id" (ancillaryChangePayload)="updateCheckedInPayload($event, 'ancillary-services')">
+    <app-modify-ancillary-services [fid]="selectedFlight?.id"
+        (ancillaryChangePayload)="updateCheckedInPayload($event, 'ancillary-services')">
     </app-modify-ancillary-services>
+</div>
+
+<div *ngIf="selectedFlight && isInflightShoppingRequest">
+    <app-add-inflight-shopping-request [fid]="selectedFlight?.id"
+        (addShoppingRequestChangePayload)="updateCheckedInPayload($event, 'add-in-flight-shopping')">
+    </app-add-inflight-shopping-request>
 </div>

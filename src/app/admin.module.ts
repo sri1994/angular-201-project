@@ -4,6 +4,9 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 
 import { Routes, RouterModule } from '@angular/router';
 import { SharedModule } from './shared.module';
+import { AddOrUpdatePassengerComponent } from './add-or-update-passenger/add-or-update-passenger.component';
+import { ActionModalComponent } from './action-modal/action-modal.component';
+import { AddOrDeleteAncillaryServiceComponent } from './add-or-delete-ancillary-service/add-or-delete-ancillary-service.component';
 
 const routes: Routes = [
   { path: 'admin-dashboard', component: AdminDashboardComponent }
@@ -11,10 +14,11 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [AdminDashboardComponent],
+  declarations: [AdminDashboardComponent, AddOrUpdatePassengerComponent, AddOrDeleteAncillaryServiceComponent],
   imports: [
     SharedModule,
     RouterModule.forChild(routes)
-  ]
+  ],
+  entryComponents: [ActionModalComponent, AddOrDeleteAncillaryServiceComponent]
 })
 export class AdminModule { }
