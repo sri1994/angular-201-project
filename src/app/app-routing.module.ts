@@ -4,9 +4,9 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: 'staff', loadChildren: './staff.module#StaffModule', canActivate: 
+  { path: 'staff', loadChildren: './staff/staff.module#StaffModule', canActivate:
   [AuthGuard]},
-  { path: 'admin', loadChildren: './admin.module#AdminModule', canActivate: 
+  { path: 'admin', loadChildren: './admin/admin.module#AdminModule', canActivate:
   [AuthGuard]},
   { path: 'login', component: LoginComponent},
   { path: '**', redirectTo: '/login'}

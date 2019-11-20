@@ -1,0 +1,60 @@
+<div class="kadamba-series-buttons" *ngIf="passengerList.length > 0 && !isPassengersLoading">
+    <mat-form-field>
+        <mat-select [(ngModel)]="selectedPassenger" (selectionChange)="onPassengerSelectionChanged($event)"
+            placeholder="Select passenger">
+            <mat-option *ngFor="let passenger of passengerList" [value]="passenger">{{ passenger?.passenger?.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div class="row no-margin">
+    <div class="col-lg-5">
+    </div>
+    <div class="col-lg-7">
+        <mat-spinner *ngIf="isPassengersLoading"></mat-spinner>
+    </div>
+</div>
+
+<br>
+
+<div class="row no-margin" *ngIf="selectedPassenger">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6" style="text-align: center;">
+        <span class="mat-body-2">Ancillary services required by {{ selectedPassenger?.passenger?.name }}</span>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+
+<br>
+
+<div class="row no-margin" *ngIf="selectedPassenger">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 kadamba-content-border-theme text-center">
+        <br>
+        <form [formGroup]="ancillaryForm">
+
+            <div formArrayName="ancillaryList"
+                *ngFor="let item of ancillaryForm.get('ancillaryList')['controls']; let i = index;">
+                <div [formGroupName]="i">
+                    <mat-checkbox [disableRipple]="true" (click)="onAncillaryServicesChanged($event)"
+                        formControlName="status" color="primary">{{ item?.get('label')?.value }}
+                    </mat-checkbox>
+                </div>
+            </div>
+        </form>
+        <br>
+    </div>
+    <div class="col-lg-4"></div>
+</div>
+
+<br>
+
+<div class="row no-margin" *ngIf="selectedPassenger">
+    <div class="col-lg-12" style="text-align: center;">
+        <br>
+        <button mat-raised-button (click)="editAncillaryServices()" *ngIf="!isEditAncillaryServices"
+            color="primary">Edit ancillary services</button>
+        <button mat-raised-button (click)="modifyAncillaryServices()" *ngIf="isEditAncillaryServices"
+            color="primary">Modify ancillary services</button>
+    </div>
+</div>

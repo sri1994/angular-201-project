@@ -1,8 +1,8 @@
-import { status } from './status';
-import { passenger } from './passenger';
+import { Status } from './status';
+import { Passenger } from './passenger';
 
-export interface seat {
-    "serialNo": string;
-    "status": status;
-    "passenger": passenger;
+export interface Seat {
+    'serialNo': string;
+    'status': Status;
+    'passenger': Passenger;
 }

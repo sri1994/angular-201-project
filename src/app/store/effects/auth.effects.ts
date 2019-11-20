@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, Effect } from '@ngrx/effects';
 import * as AuthActions from './../actions/auth.actions';
-import { AuthService } from './../../auth.service';
+import { AuthServices } from './../../auth.service';
 import { mergeMap, map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 
@@ -21,13 +21,13 @@ export class AuthEffects {
         mergeMap(
             (data) => this.authService.updateWhetherAuthenticated(data.payload)
                 .pipe(
-                    map(data => new AuthActions.LoginUpdateUserSuccessAction(data)),
+                    map(data2 => new AuthActions.LoginUpdateUserSuccessAction(data2)),
                     catchError(error => of(new AuthActions.LoginUpdateUserFailureAction(error)))
                 )
         )
     );
 
-    constructor(private actions$: Actions, private authService: AuthService) {
+    constructor(private actions$: Actions, private authService: AuthServices) {
 
     }
 }

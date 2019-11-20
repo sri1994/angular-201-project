@@ -1,22 +1,21 @@
-import { Flight } from '../../models/Flight';
 import * as FlightActions from '../actions/flights.actions';
 
-export interface flightsState {
+export interface FlightsState {
   list: any[];
   flightsListLoading: boolean;
   updateFlightsLoading: boolean;
   flightsListError: Error;
   updateFlightsError: Error;
   type: any;
-};
+}
 
-export interface flightState {
+export interface FlightState {
     flightData: any;
     loading: false;
     error: Error;
-  };
+  }
 
-export const initialFlightsState: flightsState = {
+export const initialFlightsState: FlightsState = {
   list: [],
   flightsListLoading: true,
   updateFlightsLoading: true,
@@ -25,16 +24,16 @@ export const initialFlightsState: flightsState = {
   type: undefined
 };
 
-export const initialFlightState: flightState = {
+export const initialFlightState: FlightState = {
     flightData: {},
     loading: false,
     error: undefined
   };
 
-export function flightsReducer(state: flightsState = initialFlightsState, action: FlightActions.Actions) {
+export function flightsReducer(state: FlightsState = initialFlightsState, action: FlightActions.Actions) {
   console.log('STATE :', state);
   console.log('Action :', action);
-  switch(action.type) {
+  switch (action.type) {
     case FlightActions.GET_FLIGHTS: {
       return { ...state, flightsListLoading: true, updateFlightsLoading: true};
     }
@@ -67,8 +66,8 @@ export function flightsReducer(state: flightsState = initialFlightsState, action
   }
 }
 
-export function flightReducer(state: flightState = initialFlightState, action: FlightActions.Actions) {
-    switch(action.type) {
+export function flightReducer(state: FlightState = initialFlightState, action: FlightActions.Actions) {
+    switch (action.type) {
       case FlightActions.GET_FLIGHT_DETAILS: {
         return {...state, loading: true};
       }
@@ -98,3 +97,13 @@ function modifyList(list: any[], payload: any): any {
   });
   return listMap;
 }
+
+// export const getFlightsState = createFeatureSelector<flightsState>('flightsList');
+
+// export const getFlightProjector = (state: flightsState) => state.list;
+
+// export const getFlightsSelector = createSelector(
+//   getFlightsState,
+//   getFlightProjector
+// );
+

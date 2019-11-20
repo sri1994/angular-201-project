@@ -1,20 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { authReducer } from './store/reducers/auth.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './store/effects/auth.effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { CommonModule } from '@angular/common';
-
-
 import {A11yModule} from '@angular/cdk/a11y';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {PortalModule} from '@angular/cdk/portal';
@@ -56,36 +52,31 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
-import { AirlineToolbarComponent } from './airline-toolbar/airline-toolbar.component';
-
-import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
-import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
 import { FlightEffects } from './store/effects/flights.effects';
 import { flightReducer, flightsReducer } from './store/reducers/flights.reducers';
+import { RouterModule } from '@angular/router';
+import { AuthServices } from './auth.service';
+import { AuthService } from 'angular-6-social-login';
+import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from 'angular-6-social-login';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
-let config = new AuthServiceConfig([
-  {
-    id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider("Google-OAuth-Client-Id")
-  },
-  {
-    id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider("Facebook-App-Id")
-  }
-]);
-
-export function provideConfig() {
+export function getAuthServiceConfigs() {
+  const config = new AuthServiceConfig([
+    {
+      id: GoogleLoginProvider.PROVIDER_ID,
+      provider: new GoogleLoginProvider('302570265955-len91flbda1a5ikp22o3nod9d00eh0dh.apps.googleusercontent.com')
+    }
+  ]);
   return config;
 }
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    AirlineToolbarComponent
+    LoginComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     CommonModule,
     AppRoutingModule,
     HttpClientModule,
@@ -138,13 +129,17 @@ export function provideConfig() {
       flightsState: flightsReducer
     }),
     EffectsModule.forRoot([AuthEffects, FlightEffects]),
+    DeviceDetectorModule.forRoot(),
     BrowserAnimationsModule,
-    SocialLoginModule
+    SocialLoginModule,
+    RouterModule
   ],
   providers: [{
     provide: AuthServiceConfig,
-    useFactory: provideConfig
-  }],
+    useFactory: getAuthServiceConfigs
+  },
+  AuthService,
+  AuthServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

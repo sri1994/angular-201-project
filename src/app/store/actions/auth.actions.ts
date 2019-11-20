@@ -53,4 +53,4 @@ export class LoginUpdateUserFailureAction implements Action {
 }
 
 
-export type Actions = LoginUserAction | LoginUserSuccessAction | LoginUserFailureAction | LoginUpdateUserAction | LoginUpdateUserSuccessAction | LoginUpdateUserFailureAction; 
+export type Actions = LoginUserAction | LoginUserSuccessAction | LoginUserFailureAction | LoginUpdateUserAction | LoginUpdateUserSuccessAction | LoginUpdateUserFailureAction;

@@ -1,5 +1,5 @@
-export interface status {
-    "checkedIn": boolean;
-    "wheelChair": boolean;
-    "withInfant": boolean;
+export interface Status {
+    'checkedIn': boolean;
+    'wheelChair': boolean;
+    'withInfant': boolean;
   }

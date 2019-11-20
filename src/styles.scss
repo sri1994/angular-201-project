@@ -18,3 +18,30 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin-left: 0px;
     margin-right: 0px;
   }
+
+.text-center {
+  text-align: center;
+}
+
+.kadamba-series-buttons {
+  @extend .text-center;
+  button {
+    margin-right: 8px;
+  }
+}
+
+.kadamba-content-border-theme {
+  border: 2px solid rebeccapurple;
+  border-radius: 0.5rem;
+  background-color: ghostwhite;
+}
+
+.btn-clicked {
+  background-color: green;
+  color: white;
+}
+
+.btn-unclicked {
+  background-color: #673ab7;
+  color: white;
+}

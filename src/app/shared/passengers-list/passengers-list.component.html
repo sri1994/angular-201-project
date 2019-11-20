@@ -1,0 +1,64 @@
+<br>
+
+<div class="row no-margin">
+  <div class="col-lg-3">
+  </div>
+  <div class="col-lg-6" style="text-align: center;">
+    <h3>Passengers from flight {{ flightId }}</h3>
+  </div>
+  <div class="col-lg-3">
+  </div>
+</div>
+<br>
+<div class="row no-margin">
+  <div class="col-lg-3">
+  </div>
+  <div class="col-lg-6">
+    <mat-form-field>
+      <mat-select [(value)]="selectedStatus"
+        placeholder="{{ fromStaff ? 'Choose status to filter' : 'Filter passengers by missing mandatory requirements (passport, address, date of birth)' }}"
+        (selectionChange)="onStatusChange($event)">
+        <mat-option *ngFor="let status of passengerStatusList" [value]="status">{{ status }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-lg-3">
+  </div>
+</div>
+
+<div class="row no-margin">
+  <div class="col-lg-1">
+  </div>
+  <div class="col-lg-10">
+    <div class="example-container mat-elevation-z8">
+      <mat-table class="sphr-mat-table" [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="Name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{ row.name }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Seat">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Seat No. </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{ row.seatNo }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="AncillaryServices">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Ancillary Services </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <div class="mat-body-2" *ngFor="let serviceObj of row.ancillaryServices">
+              <span>{{ serviceObj?.label }}, &nbsp;</span>
+            </div>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row class="sphr-mat-header-row" *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row class="sphr-mat-row" *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+      </mat-table>
+
+      <mat-paginator [pageSize]="4" [pageSizeOptions]="[2, 4]"></mat-paginator>
+    </div>
+  </div>
+  <div class="col-lg-1">
+  </div>
+</div>

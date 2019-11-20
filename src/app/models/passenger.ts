@@ -1,4 +1,4 @@
-export interface passenger {
-    "name": string;
-    "id": string;
+export interface Passenger {
+    'name': string;
+    'id': string;
 }

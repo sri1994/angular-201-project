@@ -46,7 +46,7 @@
               "passengerDetails": {
                 "name": "srinivas",
                 "id": "ertdf3",
-                "passport": "P23IN340",
+                "passport": "P23IN341",
                 "address": "#30, 4th block, Jayanagar, Bengaluru-28",
                 "dateOfBirth": "25/10/1993",
                 "specialMeals": true,
@@ -58,7 +58,7 @@
                   },
                   {
                     "label": "Lounge access",
-                    "status": true
+                    "status": false
                   }
                 ]
               }
@@ -73,9 +73,9 @@
               "passengerDetails": {
                 "name": "srinivas1",
                 "id": "ertdf3",
-                "passport": "P23IN346",
+                "passport": "P23IN342",
                 "address": "#30, 4th block, Jayanagar, Bengaluru",
-                "dateOfBirth": "25/10/1996",
+                "dateOfBirth": "25/10/1993",
                 "specialMeals": true,
                 "isEntitledToInFlightShopping": true,
                 "ancillaryServices": [
@@ -100,19 +100,19 @@
               "passengerDetails": {
                 "name": "srinivas2",
                 "id": "ertdf3",
-                "passport": "P3234IBG",
+                "passport": "P23IN346",
                 "address": "dsfdsgfdggvcbvcbvcnb56",
                 "dateOfBirth": "25/10/1997",
                 "specialMeals": true,
-                "isEntitledToInFlightShopping": false,
+                "isEntitledToInFlightShopping": true,
                 "ancillaryServices": [
                   {
                     "label": "Airport parking",
-                    "status": false
+                    "status": true
                   },
                   {
                     "label": "Lounge access",
-                    "status": false
+                    "status": true
                   }
                 ]
               }
@@ -120,7 +120,7 @@
             {
               "serialNo": "04",
               "status": {
-                "checkedIn": false,
+                "checkedIn": true,
                 "wheelChair": false,
                 "withInfant": false
               },
@@ -147,7 +147,7 @@
             {
               "serialNo": "05",
               "status": {
-                "checkedIn": false,
+                "checkedIn": true,
                 "wheelChair": false,
                 "withInfant": false
               },
@@ -157,7 +157,7 @@
                 "passport": "P23IN345",
                 "address": "",
                 "dateOfBirth": "",
-                "specialMeals": false,
+                "specialMeals": true,
                 "isEntitledToInFlightShopping": true,
                 "ancillaryServices": [
                   {
@@ -166,7 +166,7 @@
                   },
                   {
                     "label": "Lounge access",
-                    "status": false
+                    "status": true
                   }
                 ]
               }
@@ -197,6 +197,838 @@
                   }
                 ]
               }
+            },
+            {
+              "serialNo": "07",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas6",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "08",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas7",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "09",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas8",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "10",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas9",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "11",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas10",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "12",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas11",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "13",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas12",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "14",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas13",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "15",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas14",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "16",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas15",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "17",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas16",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "18",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas17",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "19",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas18",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "20",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas19",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "21",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas20",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "22",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas21",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "23",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas22",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "24",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas23",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "25",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas24",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "26",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas25",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "27",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas26",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "28",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas27",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "29",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas28",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "30",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas29",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
             }
           ],
           "seat_map": [
@@ -219,14 +1051,6 @@
             {
               "seat_label": "5",
               "layout": "ggg__ggg"
-            },
-            {
-              "seat_label": "6",
-              "layout": "ggg__ggg"
-            },
-            {
-              "seat_label": "7",
-              "layout": "ggg__ggg"
             }
           ]
         }
@@ -246,6 +1070,14 @@
         },
         {
           "label": "Currency exchange",
+          "value": true
+        },
+        {
+          "label": "Wheel chair ",
+          "value": true
+        },
+        {
+          "label": "dfdsgdgfdg",
           "value": true
         }
       ],
@@ -274,6 +1106,26 @@
         },
         {
           "label": "Vanity bags",
+          "value": true
+        },
+        {
+          "label": "Wooden items",
+          "value": true
+        },
+        {
+          "label": "fdsfdsfdsf",
+          "value": true
+        },
+        {
+          "label": "dsfdsfdsd",
+          "value": true
+        },
+        {
+          "label": "fgfdgfd",
+          "value": true
+        },
+        {
+          "label": "dfdgfgf",
           "value": true
         }
       ]
@@ -322,7 +1174,7 @@
             {
               "serialNo": "02",
               "status": {
-                "checkedIn": false,
+                "checkedIn": true,
                 "wheelChair": false,
                 "withInfant": true
               },
@@ -349,7 +1201,7 @@
             {
               "serialNo": "03",
               "status": {
-                "checkedIn": false,
+                "checkedIn": true,
                 "wheelChair": true,
                 "withInfant": true
               },
@@ -360,7 +1212,7 @@
                 "address": "dsfdsgfdggvcbvcbvcnb56",
                 "dateOfBirth": "25/10/1997",
                 "specialMeals": true,
-                "isEntitledToInFlightShopping": false,
+                "isEntitledToInFlightShopping": true,
                 "ancillaryServices": [
                   {
                     "label": "Airport parking",
@@ -408,13 +1260,13 @@
                 "withInfant": false
               },
               "passengerDetails": {
-                "name": "Naane hero",
+                "name": "kaamsagar",
                 "id": "ertdf3",
                 "passport": "P23IN345",
                 "address": "",
                 "dateOfBirth": "",
                 "specialMeals": false,
-                "isEntitledToInFlightShopping": false,
+                "isEntitledToInFlightShopping": true,
                 "ancillaryServices": [
                   {
                     "label": "Airport parking",
@@ -422,7 +1274,7 @@
                   },
                   {
                     "label": "Lounge access",
-                    "status": false
+                    "status": true
                   }
                 ]
               }
@@ -453,6 +1305,426 @@
                   }
                 ]
               }
+            },
+            {
+              "serialNo": "07",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas10",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "08",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas11",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "09",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas12",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "10",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas13",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "11",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas14",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "12",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas15",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "13",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas16",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "14",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas17",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "15",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas18",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "16",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas19",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "17",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas20",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
+            },
+            {
+              "serialNo": "18",
+              "status": {
+                "checkedIn": true,
+                "wheelChair": false,
+                "withInfant": false
+              },
+              "passengerDetails": {
+                "name": "srinivas21",
+                "id": "ertdf3",
+                "passport": "P23IN345",
+                "address": "#30, 4th block, Jayanagar, Bengaluru",
+                "dateOfBirth": "25/10/1994",
+                "specialMeals": true,
+                "isEntitledToInFlightShopping": false,
+                "ancillaryServices": [
+                  {
+                    "label": "Airport parking",
+                    "status": true
+                  },
+                  {
+                    "label": "Lounge access",
+                    "status": false
+                  },
+                  {
+                    "label": "Currency exchange",
+                    "status": false
+                  },
+                  {
+                    "label": "Entertainment",
+                    "status": false
+                  }
+                ]
+              }
             }
           ],
           "seat_map": [
@@ -473,11 +1745,75 @@
       ],
       "ancillaryServicesPerFlight": [
         {
-          "label": "Airport Taxi",
+          "label": "Priority Boarding",
+          "value": true
+        },
+        {
+          "label": "Airport taxi",
           "value": true
         },
         {
           "label": "Hotel booking",
+          "value": true
+        },
+        {
+          "label": "Currency exchange",
+          "value": true
+        },
+        {
+          "label": "Wheel chair ",
+          "value": true
+        },
+        {
+          "label": "dfdsgdgfdg",
+          "value": true
+        }
+      ],
+      "specialMealsPerFlight": [
+        {
+          "label": "North indian special",
+          "value": true
+        },
+        {
+          "label": "South indian special",
+          "value": true
+        },
+        {
+          "label": "Mysore Masala Dose",
+          "value": true
+        },
+        {
+          "label": "Vada paav",
+          "value": true
+        }
+      ],
+      "shoppingItemsPerFlight": [
+        {
+          "label": "Chennapatna wooden toys",
+          "value": true
+        },
+        {
+          "label": "Vanity bags",
+          "value": true
+        },
+        {
+          "label": "Wooden items",
+          "value": true
+        },
+        {
+          "label": "fdsfdsfdsf",
+          "value": true
+        },
+        {
+          "label": "dsfdsfdsd",
+          "value": true
+        },
+        {
+          "label": "fgfdgfd",
+          "value": true
+        },
+        {
+          "label": "dfdgfgf",
           "value": true
         }
       ]

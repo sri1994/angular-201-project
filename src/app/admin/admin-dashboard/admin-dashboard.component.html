@@ -1,0 +1,128 @@
+<app-common-toolbar [userData]="userObject"></app-common-toolbar>
+<br>
+<div class="row no-margin">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10 kadamba-content-border-theme">
+        <br>
+        <div class="kadamba-series-buttons">
+            <mat-form-field>
+                <mat-select [(value)]="selectedFlight" placeholder="Select flight"
+                    (selectionChange)="onFlightSelectionChanged($event)">
+                    <mat-option *ngFor="let flight of updatedFlightsList" [value]="flight">{{ flight?.name }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="kadamba-series-buttons" *ngIf="selectedFlight">
+            <button mat-raised-button
+                [ngClass]="{ 'btn-clicked': isManagePassengers, 'btn-unclicked': !isManagePassengers }"
+                (click)="showManageOptions('isManagePassengers')">Manage Passengers</button>
+            <button mat-raised-button
+                [ngClass]="{ 'btn-clicked': isAncillaryServices, 'btn-unclicked': !isAncillaryServices }"
+                (click)="showManageOptions('isAncillaryServices')" color="primary">Manage Ancillary Services</button>
+            <button mat-raised-button [ngClass]="{ 'btn-clicked': isSpecialMeals, 'btn-unclicked': !isSpecialMeals }"
+                (click)="showManageOptions('isSpecialMeals')" color="primary">Manage Special Meals</button>
+            <button mat-raised-button [ngClass]="{ 'btn-clicked': isShoppingItems, 'btn-unclicked': !isShoppingItems }"
+                (click)="showManageOptions('isShoppingItems')" color="primary">Manage Shopping items</button>
+        </div>
+        <br>
+        <div class="kadamba-series-buttons" *ngIf="selectedFlight && (isAncillaryServices || isManagePassengers)">
+            <button mat-raised-button [ngClass]="{ 'btn-clicked': isPassengerList, 'btn-unclicked': !isPassengerList }"
+                (click)="showPassengerOptions('isPassengerList')" *ngIf="isManagePassengers" color="primary">Display
+                Passenger list</button>
+            <button mat-raised-button
+                [ngClass]="{ 'btn-clicked': isModifyPassenger, 'btn-unclicked': !isModifyPassenger }"
+                (click)="showPassengerOptions('isModifyPassenger')" *ngIf="isManagePassengers"
+                color="primary">Add/Remove/Modify Passenger details</button>
+        </div>
+
+        <br>
+    </div>
+    <div class="col-lg-1">
+    </div>
+</div>
+
+<div class="row no-margin" *ngIf="selectedFlight && isPassengerList">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+        <div>
+            <app-passengers-list [fromStaff]="false" [flightId]="selectedFlight?.id"></app-passengers-list>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+
+<div class="kadamba-series-buttons" *ngIf="selectedFlight && isModifyPassenger && passengerList.length > 0">
+    <mat-form-field>
+        <mat-select [(ngModel)]="selectedPassenger" (selectionChange)="onPassengerSelectionChanged($event)"
+            placeholder="Select passenger">
+            <mat-option *ngFor="let passenger of passengerList" [value]="passenger">{{ passenger?.passenger?.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<br>
+
+<div class="row no-margin" *ngIf="selectedPassenger && isModifyPassenger">
+
+    <div class="col-lg-12">
+        <app-add-or-update-passenger [selectedPassenger]="selectedPassenger"
+            (updatedPassengerPayload)="modifyFlightPayload($event)"></app-add-or-update-passenger>
+    </div>
+
+</div>
+
+<br>
+<br>
+
+<div class="row no-margin" *ngIf="isAncillaryServices">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 airline-ancillary-services-buttons">
+        <button mat-icon-button class="custom-icon-button" (click)="addService('ancillary-services')" color="primary"
+            aria-label="icon-button with a add icon">
+            <mat-icon>add_circle</mat-icon><span>&nbsp;Add/Update ancillary services</span>
+        </button>
+        <br>
+        <button mat-icon-button class="custom-icon-button" (click)="deleteService('ancillary-services')" color="warn"
+            aria-label="icon-button with a delete icon">
+            <mat-icon>delete</mat-icon><span>&nbsp;Delete ancillary service</span>
+        </button>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+
+<div class="row no-margin" *ngIf="isSpecialMeals">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 airline-ancillary-services-buttons">
+        <button mat-icon-button class="custom-icon-button" (click)="addService('special-meals')" color="primary"
+            aria-label="icon-button with a add icon">
+            <mat-icon>add_circle</mat-icon><span>&nbsp;Add special meals</span>
+        </button>
+        <br>
+        <button mat-icon-button class="custom-icon-button" (click)="deleteService('special-meals')" color="warn"
+            aria-label="Example icon-button with a delete icon">
+            <mat-icon>delete</mat-icon><span>&nbsp;Delete special meal</span>
+        </button>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+
+<div class="row no-margin" *ngIf="isShoppingItems">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 airline-ancillary-services-buttons">
+        <button mat-icon-button class="custom-icon-button" (click)="addService('shopping-items')" color="primary"
+            aria-label="icon-button with a add icon">
+            <mat-icon>add_circle</mat-icon><span>&nbsp;Add shopping items</span>
+        </button>
+        <br>
+        <button mat-icon-button class="custom-icon-button" (click)="deleteService('shopping-items')" color="warn"
+            aria-label="icon-button with a delete icon">
+            <mat-icon>delete</mat-icon><span>&nbsp;Delete shopping item</span>
+        </button>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+
+<br>

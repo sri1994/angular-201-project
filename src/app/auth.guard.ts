@@ -1,15 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthService } from './auth.service';
-
-import { User } from './models/user';
-
+import { AuthServices } from './auth.service';
 import * as auth from './store/reducers/auth.reducers';
-
 import { Store } from '@ngrx/store';
 import { AppState } from './store/app.states';
-import * as AuthActions from './store/actions/auth.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +13,7 @@ export class AuthGuard implements CanActivate {
 
   public userList: Observable<auth.State[]>;
 
-  constructor(private auth: AuthService, private myRoute: Router, private store: Store<AppState>) {
+  constructor(private authService: AuthServices, private myRoute: Router, private store: Store<AppState>) {
 
   }
 
@@ -26,10 +21,10 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    if (this.auth.isLoggedIn()) {
+    if (this.authService.isLoggedIn()) {
       return true;
     } else {
-      this.myRoute.navigate(["login"]);
+      this.myRoute.navigate(['login']);
       return false;
     }
 

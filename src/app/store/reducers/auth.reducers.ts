@@ -2,10 +2,10 @@ import { User } from '../../models/user';
 import * as AuthActions from '../actions/auth.actions';
 
 export interface State {
-  list: [],
-  loading: false,
-  error: Error
-};
+  list: [];
+  loading: false;
+  error: Error;
+}
 
 export const initialState: State = {
   list: [],
@@ -14,7 +14,7 @@ export const initialState: State = {
 };
 
 export function authReducer(state: State = initialState, action: AuthActions.Actions) {
-  switch(action.type) {
+  switch (action.type) {
     case AuthActions.LOGIN_USER: {
       return { ...state, loading: true};
     }

@@ -7,7 +7,7 @@ import { delay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthServices {
 
   public credentialList: any[] = [];
 

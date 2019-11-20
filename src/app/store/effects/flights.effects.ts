@@ -11,7 +11,10 @@ export class FlightEffects {
         mergeMap(
             () => this.flightsService.getFlightsList()
                 .pipe(
-                    map(data => new FlightActions.GetFlightsSuccessAction(data)),
+                    map(data => {
+                        console.log('CALLING FLIGHTS ACTION');
+                        return new FlightActions.GetFlightsSuccessAction(data);
+                    }),
                     catchError(error => of(new FlightActions.GetFlightsFailureAction(error)))
                 )
         )
@@ -21,7 +24,7 @@ export class FlightEffects {
         mergeMap(
             (data) => this.flightsService.getFlightDetail(data.payload)
                 .pipe(
-                    map(data => new FlightActions.GetFlightDetailsSuccessAction(data)),
+                    map(data2 => new FlightActions.GetFlightDetailsSuccessAction(data2)),
                     catchError(error => of(new FlightActions.GetFlightDetailsFailureAction(error)))
                 )
         )
@@ -31,7 +34,10 @@ export class FlightEffects {
         mergeMap(
             (dataPayload) => this.flightsService.updateFlightsList(dataPayload.payload)
                 .pipe(
-                    map(data => new FlightActions.UpdateFlightsListSuccessAction(data, dataPayload.payloadType)),
+                    map(data => {
+                        console.log('CALLING UPDATE FLIGHTS ACTION');
+                        return new FlightActions.UpdateFlightsListSuccessAction(data, dataPayload.payloadType);
+                    }),
                     catchError(error => of(new FlightActions.UpdateFlightsListFailureAction(error, dataPayload.payloadType)))
                 )
         )

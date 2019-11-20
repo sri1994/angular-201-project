@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { delay } from 'rxjs/operators'
+import { delay } from 'rxjs/operators';
 import { Flight } from './models/flight';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class FlightsService {
 
   public baseUrl = 'http://localhost:3000/flights';
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
 
   }
 

@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <span><i>Kadamba</i> Airlines</span>
+  <span>&nbsp;</span>
+  <span>&nbsp;</span>
+  <span>&nbsp;</span>
+  <span>&nbsp;</span>
+  <mat-icon aria-hidden="false" aria-label="Example home icon" class="flight-icon">flight_takeoff</mat-icon>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+  <span *ngIf="isDesktopDevice && !isMobile && userData?.type === 'google'">&nbsp;Welcome {{ userData?.userName?.split(' ')[0] }}!&nbsp;</span>
+  <img class="user-image" *ngIf="userData?.type === 'google'" [matMenuTriggerFor]="beforeMenu" width="50px" height="50px" style="border-radius: 50%;"
+    src="{{ userData?.userImage }}">
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+    <button mat-menu-item (click)="logout()">Logout</button>
+  </mat-menu>
+  <button *ngIf="userData?.type === 'email'" mat-raised-button color="warn" (click)="logout()">Logout</button>
+</mat-toolbar>

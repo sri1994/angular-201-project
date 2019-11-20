@@ -1,0 +1,21 @@
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+.mat-toolbar {
+   position: sticky;
+   position: -webkit-sticky; /* For macOS/iOS Safari */
+   top: 0; /* Sets the sticky toolbar to be on top */
+   z-index: 1000;
+}
+
+.flight-icon {
+   color: darkorange;
+   transform: scale(2);
+}
+
+.user-image {
+   cursor: pointer;
+}

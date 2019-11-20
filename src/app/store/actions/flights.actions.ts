@@ -80,4 +80,4 @@ export class UpdateFlightsListFailureAction implements Action {
 }
 
 
-export type Actions = UpdateFlightsListFailureAction | UpdateFlightsListSuccessAction | UpdateFlightsListAction | GetFlightDetailsFailureAction | GetFlightDetailsSuccessAction | GetFlightDetailsAction | GetFlightsAction | GetFlightsSuccessAction | GetFlightsFailureAction; 
+export type Actions = UpdateFlightsListFailureAction | UpdateFlightsListSuccessAction | UpdateFlightsListAction | GetFlightDetailsFailureAction | GetFlightDetailsSuccessAction | GetFlightDetailsAction | GetFlightsAction | GetFlightsSuccessAction | GetFlightsFailureAction;

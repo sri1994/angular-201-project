@@ -3,6 +3,6 @@ import * as flight from './reducers/flights.reducers';
 
 export interface AppState {
   authState: auth.State;
-  flightState: flight.flightState;
-  flightsState: flight.flightsState;
+  flightState: flight.FlightState;
+  flightsState: flight.FlightsState;
 }
